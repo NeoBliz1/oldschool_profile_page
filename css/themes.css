@@ -1,0 +1,31 @@
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .about,
+body.dark-mode .ui-dialog {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode p,
+body.dark-mode a,
+body.dark-mode li { /* Added li here */
+    color: #ffffff;
+}
+
+body.dark-mode .wicdHeader {
+    background-color: #333333;
+}
+
+body.dark-mode .thought.robotThought {
+    background-color: #333333;
+}
+
+body.dark-mode .thought.userThought {
+    background-color: #555555;
+}

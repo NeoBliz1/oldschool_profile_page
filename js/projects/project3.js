@@ -1,3 +1,7 @@
+$.ajaxSetup({
+  timeout: 500
+});
+
 let cuteRockUrl;
 
 let colorRainSketch = function(p) {

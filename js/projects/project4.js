@@ -7,7 +7,9 @@ In this version has added next updates:
  - was add the possibility to chosen board size - done
  - was add tiles cascading down the screen - done
  */
-
+$.ajaxSetup({
+  timeout: 500
+});
 var leafYellowUrl, leafersSeedUrl, leafersSeedlingUrl, leafersSaplingUrl, 
 leafersTreeUrl, leafersUltimateUrl, marcimusUrl, mrPantsUrl, mrPinkUrl, 
 oldSpiceManUrl, robotFemaleUrl, codeTxtUrl, scriptText;

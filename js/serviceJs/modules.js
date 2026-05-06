@@ -2,18 +2,18 @@
 this.mySkillsLinksHalndler = () => {
 	//get all links in divs with class=linksContainer
 	$('.linksContainer > a').each(function (index, el) {
-		//if data attrimute isn't undefined then add onClick listner
+		//if data attribute isn't undefined then add onClick listener
 		const dataLinkToEl = $(this).attr('data-linkToElement');
 		if (typeof dataLinkToEl === 'string') {
 			//get project preview div
 			const $projectPreviewDiv = $('.' + dataLinkToEl);
-			//callculate project preview offset
+			//calculate project preview offset
 			const marginPercentFromTop = 5;
 			const offsetFromTop = $projectPreviewDiv.offset().top;
 			const newOffsetFromTop =
 				offsetFromTop - (offsetFromTop * marginPercentFromTop) / 100;
 			//console.log(newOffsetFromTop);
-			//add listner to link by data attribute
+			//add listener to link by data attribute
 			$(this).click(function (event) {
 				event.preventDefault();
 				//disable mouse event handler from skills divs
@@ -55,4 +55,18 @@ this.mySkillsLinksHalndler = () => {
 	// console.log(
 	// 	$('.linksContainer > ').attr('data-linktoelement')
 	// );
+};
+
+this.hashNavigationHandler = () => {
+	if (window.location.hash === '#projectList') {
+		const $target = $('#projectList');
+
+		if ($target.length) {
+			setTimeout(function() {
+				$('html, body').animate({
+					scrollTop: $target.offset().top
+				}, 900);
+			}, 300);
+		}
+	}
 };
