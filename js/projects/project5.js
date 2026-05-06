@@ -658,14 +658,14 @@ let gameSketch = function(p) {
           battleSwing.play()
           standOnce=1;
           soundOnce-=1;
-        };
+        }
       }      
       else if (OhNoesGuy.y>310 && OhNoesGuy.y<320 && fall_hole === 0)  {
         OhNoesGuy.stand();        
         while(standOnce===1){
           hitThud.play();
           standOnce-=1;
-        };
+        }
       }
       else {
         OhNoesGuy.fall();
@@ -692,7 +692,7 @@ let gameSketch = function(p) {
         '-ms-user-select': 'none', /* Internet Explorer/Edge */
             'user-select': 'none' /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
-  });;
+  });
   
 };
 
