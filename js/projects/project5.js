@@ -1,3 +1,7 @@
+$.ajaxSetup({
+  timeout: 500
+});
+
 /*This programm based on the project: Hoppy Bever Extreme
 In this version has added next updates:
  - was change bever to the OhNoesGuy - done

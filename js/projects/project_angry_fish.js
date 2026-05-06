@@ -1,3 +1,7 @@
+$.ajaxSetup({
+  timeout: 500
+});
+
 // When there is no predator, the fishes swim forward.
 // When a predator has appeared, angry fishes attack a predator and devour it.
 
@@ -8,22 +12,12 @@ var fishSpeed = 1;
 //checking browser and platform, and if it is mobile then reduce fps 2 times
 
 if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-  if (!!window.chrome) {
-    backgroundIsGradient = true;    
-  }
-  else {
-    backgroundIsGradient = false; 
-  }
+  backgroundIsGradient = !!window.chrome;
   fishSpeed = 2;
 }
 
 if (navigator.userAgent.match(/(Android)/)) {
-  if (!!window.chrome) {
-    backgroundIsGradient = true;    
-  }
-  else {
-    backgroundIsGradient = false; 
-  }
+  backgroundIsGradient = !!window.chrome;
   fishSpeed = 2;  
 }
 
@@ -570,7 +564,6 @@ var checkTxtUrl = function () {
 }
 
 
-
 //****main_programm*****
 checkTxtUrl();
 var externalUrlsArray = Object.values(externalUrls);
@@ -590,7 +583,3 @@ $(document).ajaxComplete(function(){
     let myp5 = new p5(gameSketch);
   }  
 });
-
-
-
-

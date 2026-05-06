@@ -25,7 +25,6 @@ ul {
 	font-size: 2vh;
 }
 a {
-	color: rgb(77, 77, 77);
 	font-family: 'Biryani', sans-serif;
 	font-size: 2vh;
 	color: purple;
@@ -59,8 +58,8 @@ h2 {
 	background-color: #f1f2f3;
 	z-index: 9999;
 	position: fixed;
-	left: 0px;
-	top: 0px;
+	left: 0;
+	top: 0;
 	width: 100%;
 	height: 100%;
 }
@@ -622,16 +621,16 @@ pre {
 	text-align: left;
 }
 
-/*UP_button styles*/
 .upButton,
-.messageButton {
+.messageButton,
+#lang-toggle,
+#theme-toggle {
 	position: fixed;
 	bottom: 50px;
 	right: 50px;
 	z-index: 6;
 	box-shadow: 1px 2px 8px -1px;
-	background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-	background-color: #ffec64;
+	background: #ffec64 linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
 	border-radius: 50%;
 	border: 1px solid #ffaa22;
 	display: inline-block;
@@ -639,17 +638,44 @@ pre {
 	color: black;
 	font-size: 15px;
 	font-weight: bold;
-	padding-top: 5px;
-	padding-left: 0px;
+	padding: 5px;
 	text-decoration: none;
 	text-align: center;
 	text-shadow: 0px 2px 0px #ffee66;
+	width: 30px;
+	height: 30px;
+}
+
+#lang-toggle,
+#theme-toggle {
+	width: 40px;
+	height: 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	font-size: 18px;
+}
+
+#theme-toggle {
+	top: 10px;
+	left: 60px;
+	bottom: unset;
+	right: unset;
+}
+
+#lang-toggle {
+	top: 10px;
+	left: 10px;
+	bottom: unset;
+	right: unset;
 }
 
 .upButton-hover,
-.messageButton:hover {
-	background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color: #ffab23;
+.messageButton:hover,
+#lang-toggle:hover,
+#theme-toggle:hover {
+	background: #ffab23 linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
 	color: black;
 }
 .upButton:is(:active, :focus),
@@ -658,11 +684,22 @@ pre {
 	color: white;
 }
 .upButton:focus,
-.messageButton:focus {
+.messageButton:focus,
+#lang-toggle:focus,
+#theme-toggle:focus {
 	outline: none;
 }
 .messageButton {
 	left: 50px;
+}
+#lang-toggle {
+    top: 10px;
+    left: 10px;
+    bottom: unset;
+    right: unset;
+}
+#lang-toggle:active {
+    background: #fca314;
 }
 .ui-dialog {
 	background-color: white;

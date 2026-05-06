@@ -1,3 +1,7 @@
+$.ajaxSetup({
+  timeout: 500
+});
+
 var treeUglyUrl, treeUglyImg, winstonUrl, winstonImg, treeTallUrl, treeTallImg;
 //check availability of the image's URLs
 var animCoeff = 1;

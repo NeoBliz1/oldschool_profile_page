@@ -1,3 +1,7 @@
+$.ajaxSetup({
+  timeout: 500
+});
+
 function setup() {
   // set the background color
     background(255, 255, 255);

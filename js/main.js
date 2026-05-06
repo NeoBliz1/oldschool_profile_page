@@ -34,21 +34,6 @@ const zoomInHeader = function () {
 	//hide are elements which will be animated
 	$('.scrollAnimate').addClass('hidden');
 };
-// const fluidMeterRestart = function () {
-// 	doAnim = true; //global anim variable
-// 	htmlFM.restart();
-// 	cssFM.restart();
-// 	jsFM.restart();
-// 	jQueryFM.restart();
-// 	pythonFM.restart();
-// 	reactFM.restart();
-// 	bootstrapFM.restart();
-// 	typeScriptFM.restart();
-
-// 	// console.log('anim start')
-// };
-
-// this.doAnim = false;
 
 /*use waypoint JQuery plugin for tracking scroll elements*/
 let controller = [];
@@ -78,37 +63,12 @@ const scrollAnimate = function (viewportHeight, refreshOffset) {
 					.offset(scrollEventOffset)
 					.duration(100)
 					.on('start', function (event) {
-						if (event.scrollDirection === 'FORWARD') {
-							if ($this.hasClass('hidden')) {
-								$('#' + stickyId)
-									.removeClass('hidden fadeOutDown')
-									.addClass('fadeInUp slow');
-							}
-							if ($this.hasClass('progressbar__svg-circle')) {
-								$('#' + stickyId).addClass(
-									'circle-' + $('#' + stickyId).attr('data-circle-name')
-								);
-							}
-						} else {
-							// if ($this.hasClass('fluidMeter') && doAnim) {
-							// 	doAnim = false; //global anim variable
-							// 	// console.log('anim end')
-							// }
+						if ($this.hasClass('hidden')) {
+							$('#' + stickyId)
+								.removeClass('hidden fadeOutDown')
+								.addClass('fadeInUp slow');
 						}
 					});
-				// if ($this.hasClass('fluidMeter')) {
-				// 	const FMsceneDuration = $(window).height() + $this.height();
-				// 	scenesArr[index]
-				// 		.duration(FMsceneDuration)
-				// 		.on('end', function (event) {
-				// 			if (doAnim && event.scrollDirection === 'FORWARD') {
-				// 				doAnim = false; //global anim variable
-				// 				// console.log('anim end')
-				// 			} else if (!doAnim) {
-				// 				fluidMeterRestart();
-				// 			}
-				// 		});
-				// }
 			});
 
 		// init controller
@@ -254,15 +214,14 @@ const mySkillsAnimation = function () {
 								//animate press button, I use this method because animate.css is a conflict with translateY
 								const speed = 50;
 								const currentBottomProp = parseFloat($(this).css('bottom'));
-								const currentBottomPropD = currentBottomProp;
 								$(this).animate(
 									{
-										bottom: currentBottomPropD - 3 + 'px'
+										bottom: currentBottomProp - 3 + 'px'
 									},
 									speed,
 									function () {
 										$(this).animate(
-											{ bottom: currentBottomProp + 'px' },
+											{bottom: currentBottomProp + 'px'},
 											speed
 										);
 									}
@@ -377,7 +336,8 @@ const mySkillsAnimation = function () {
 			{
 				duration: DSdurationTime,
 				queue: false,
-				complete: function () {}
+				complete: function () {
+				}
 			}
 		);
 		// console.log('center finished')
@@ -420,7 +380,8 @@ const mySkillsAnimation = function () {
 				},
 				duration: DSdurationTime,
 				queue: false,
-				complete: function () {}
+				complete: function () {
+				}
 			},
 			'linear'
 		);
@@ -458,7 +419,8 @@ const mySkillsAnimation = function () {
 				},
 				duration: DSdurationTime,
 				queue: false,
-				complete: function () {}
+				complete: function () {
+				}
 			},
 			'linear'
 		);
@@ -539,7 +501,7 @@ const mySkillsAnimation = function () {
 					},
 					speed,
 					function () {
-						$(this).animate({ bottom: currentBottomProp + 'px' }, speed);
+						$(this).animate({bottom: currentBottomProp + 'px'}, speed);
 					}
 				);
 			});
@@ -980,50 +942,6 @@ const projectDivSizeHandler = function (
 			'font-size': projectDivWidth * 0.025
 		});
 	}
-	// let FMcanvasSize, FMborderSize, FMfontSize;
-	// // console.log(platformIsMobile, viewportWidth, wDPR)
-	// if (platformIsMobile && viewportWidth < 1000 && wDPR <= 3) {
-	// 	const FMScaleCoeff = 1.8;
-	// 	FMcanvasSize = projectDivWidth * 0.4;
-	// 	FMborderSize = projectDivWidth * 0.015;
-	// 	FMfontSize = projectDivWidth * 0.055 + 'px';
-	// 	// console.log('123')
-	// } else if (viewportWidth > viewportHeight) {
-	// 	FMcanvasSize = projectDivWidth * 0.6;
-	// 	FMborderSize = projectDivWidth / 40;
-	// 	FMfontSize = projectDivWidth / 12 + 'px';
-	// 	// console.log('2')
-	// } else if (viewportWidth < viewportHeight) {
-	// 	FMcanvasSize = projectDivWidth * 0.5;
-	// 	FMborderSize = projectDivWidth / 50;
-	// 	FMfontSize = projectDivWidth / 15 + 'px';
-	// 	// console.log('3')
-	// }
-
-	// $('canvas').attr({
-	// 	width: FMcanvasSize,
-	// 	height: FMcanvasSize
-	// });
-	// htmlFM.setProperties(75, FMcanvasSize, FMborderSize, FMfontSize, "HTML");
-	// cssFM.setProperties(70, FMcanvasSize, FMborderSize, FMfontSize, "CSS");
-	// jsFM.setProperties(55, FMcanvasSize, FMborderSize, FMfontSize, "JavaScript");
-	// jQueryFM.setProperties(80, FMcanvasSize, FMborderSize, FMfontSize, "jQuery");
-	// pythonFM.setProperties(35, FMcanvasSize, FMborderSize, FMfontSize, "Python");
-	// reactFM.setProperties(40, FMcanvasSize, FMborderSize, FMfontSize, "React");
-	// bootstrapFM.setProperties(
-	//   50,
-	//   FMcanvasSize,
-	//   FMborderSize,
-	//   FMfontSize,
-	//   "Bootstrap"
-	// );
-	// typeScriptFM.setProperties(
-	//   25,
-	//   FMcanvasSize,
-	//   FMborderSize,
-	//   FMfontSize,
-	//   "TypeScript"
-	// );
 };
 //this function is sensitive to resize event
 const cloneDivSizeHandler = function (viewportHeight, viewportWidth) {
@@ -1124,7 +1042,7 @@ const tMessageDialogBox = function (viewportWidth, viewportHeight) {
 	if ($tMessageDialog.dialog('instance') === undefined) {
 		// console.log('t box initialized');
 		$tMessageDialog.dialog({
-			position: { my: pMy, at: pAt, of: pOf },
+			position: {my: pMy, at: pAt, of: pOf},
 			width: targetWidth,
 			height: targetHeight,
 			resizable: true,
@@ -1276,256 +1194,6 @@ const tMessageDialogBox = function (viewportWidth, viewportHeight) {
 
 	$('.userIcon').fixUserIconSize();
 };
-//initialize my skills fluid meter
-
-//initialization HTML fluid meter
-// const FMfont = "Big Shoulders Display";
-// const htmlFM = new FluidMeter();
-// htmlFM.init({
-//   targetContainer: document.getElementById("HTML-fluid-meter"),
-//   fillPercentage: 75,
-//   options: {
-//     fontFamily: FMfont,
-//     drawPercentageSign: true,
-//     drawBubbles: true,
-//     drawShadow: false,
-//     size: 300,
-//     borderWidth: 15,
-//     backgroundColor: "#e2e2e2",
-//     foregroundColor: "#fafafa",
-//     foregroundFluidLayer: {
-//       fillStyle: "red",
-//       angularSpeed: 100,
-//       maxAmplitude: 12,
-//       frequency: 30,
-//       horizontalSpeed: -75
-//     },
-//     backgroundFluidLayer: {
-//       fillStyle: "pink",
-//       angularSpeed: 100,
-//       maxAmplitude: 15,
-//       frequency: 30,
-//       horizontalSpeed: 75
-//     }
-//   }
-// });
-
-// //initialization CSS fluid meter
-// const cssFM = new FluidMeter();
-// cssFM.init({
-//   targetContainer: document.getElementById("CSS-fluid-meter"),
-//   fillPercentage: 75,
-//   options: {
-//     fontFamily: FMfont,
-//     drawPercentageSign: true,
-//     drawBubbles: true,
-//     drawShadow: false,
-//     size: 300,
-//     borderWidth: 15,
-//     backgroundColor: "#e2e2e2",
-//     foregroundColor: "#fafafa",
-//     foregroundFluidLayer: {
-//       fillStyle: "#563d7c",
-//       angularSpeed: 100,
-//       maxAmplitude: 12,
-//       frequency: 30,
-//       horizontalSpeed: -75
-//     },
-//     backgroundFluidLayer: {
-//       fillStyle: "#ae7bfb",
-//       angularSpeed: 100,
-//       maxAmplitude: 15,
-//       frequency: 30,
-//       horizontalSpeed: 75
-//     }
-//   }
-// });
-
-// //initialization JS fluid meter
-// const jsFM = new FluidMeter();
-// jsFM.init({
-//   targetContainer: document.getElementById("JS-fluid-meter"),
-//   fillPercentage: 75,
-//   options: {
-//     fontFamily: FMfont,
-//     drawPercentageSign: true,
-//     drawBubbles: true,
-//     drawShadow: false,
-//     size: 300,
-//     borderWidth: 15,
-//     backgroundColor: "#e2e2e2",
-//     foregroundColor: "#fafafa",
-//     foregroundFluidLayer: {
-//       fillStyle: "#f1e05a",
-//       angularSpeed: 100,
-//       maxAmplitude: 12,
-//       frequency: 30,
-//       horizontalSpeed: -75
-//     },
-//     backgroundFluidLayer: {
-//       fillStyle: "#f2e68d",
-//       angularSpeed: 100,
-//       maxAmplitude: 15,
-//       frequency: 30,
-//       horizontalSpeed: 75
-//     }
-//   }
-// });
-
-// //initialization jQuery fluid meter
-// const jQueryFM = new FluidMeter();
-// jQueryFM.init({
-//   targetContainer: document.getElementById("jQuery-fluid-meter"),
-//   fillPercentage: 75,
-//   options: {
-//     fontFamily: FMfont,
-//     drawPercentageSign: true,
-//     drawBubbles: true,
-//     drawShadow: false,
-//     size: 300,
-//     borderWidth: 15,
-//     backgroundColor: "#e2e2e2",
-//     foregroundColor: "#fafafa",
-//     foregroundFluidLayer: {
-//       fillStyle: "#ff9000",
-//       angularSpeed: 100,
-//       maxAmplitude: 12,
-//       frequency: 30,
-//       horizontalSpeed: -75
-//     },
-//     backgroundFluidLayer: {
-//       fillStyle: "#ffc880",
-//       angularSpeed: 100,
-//       maxAmplitude: 15,
-//       frequency: 30,
-//       horizontalSpeed: 75
-//     }
-//   }
-// });
-
-// //initialization python fluid meter
-// const pythonFM = new FluidMeter();
-// pythonFM.init({
-//   targetContainer: document.getElementById("python-fluid-meter"),
-//   fillPercentage: 75,
-//   options: {
-//     fontFamily: FMfont,
-//     drawPercentageSign: true,
-//     drawBubbles: true,
-//     drawShadow: false,
-//     size: 300,
-//     borderWidth: 15,
-//     backgroundColor: "#e2e2e2",
-//     foregroundColor: "#fafafa",
-//     foregroundFluidLayer: {
-//       fillStyle: "#317bb5",
-//       angularSpeed: 100,
-//       maxAmplitude: 12,
-//       frequency: 30,
-//       horizontalSpeed: -75
-//     },
-//     backgroundFluidLayer: {
-//       fillStyle: "#ffcb17",
-//       angularSpeed: 100,
-//       maxAmplitude: 25,
-//       frequency: 30,
-//       horizontalSpeed: 75
-//     }
-//   }
-// });
-
-// //initialization react fluid meter
-// const reactFM = new FluidMeter();
-// reactFM.init({
-//   targetContainer: document.getElementById("React-fluid-meter"),
-//   fillPercentage: 75,
-//   options: {
-//     fontFamily: FMfont,
-//     drawPercentageSign: true,
-//     drawBubbles: true,
-//     drawShadow: false,
-//     size: 300,
-//     borderWidth: 15,
-//     backgroundColor: "#e2e2e2",
-//     foregroundColor: "#fafafa",
-//     foregroundFluidLayer: {
-//       fillStyle: "#61dbfb",
-//       angularSpeed: 200,
-//       maxAmplitude: 25,
-//       frequency: 50,
-//       horizontalSpeed: -45
-//     },
-//     backgroundFluidLayer: {
-//       fillStyle: "#bceaf5",
-//       angularSpeed: 100,
-//       maxAmplitude: 20,
-//       frequency: 30,
-//       horizontalSpeed: 75
-//     }
-//   }
-// });
-
-// //initialization Bootstrap fluid meter
-// const bootstrapFM = new FluidMeter();
-// bootstrapFM.init({
-//   targetContainer: document.getElementById("bootstrap-fluid-meter"),
-//   fillPercentage: 50,
-//   options: {
-//     fontFamily: FMfont,
-//     drawPercentageSign: true,
-//     drawBubbles: true,
-//     drawShadow: false,
-//     size: 300,
-//     borderWidth: 15,
-//     backgroundColor: "#e2e2e2",
-//     foregroundColor: "#fafafa",
-//     foregroundFluidLayer: {
-//       fillStyle: "#860afb",
-//       angularSpeed: 100,
-//       maxAmplitude: 12,
-//       frequency: 30,
-//       horizontalSpeed: -75
-//     },
-//     backgroundFluidLayer: {
-//       fillStyle: "#8e55c3",
-//       angularSpeed: 100,
-//       maxAmplitude: 15,
-//       frequency: 30,
-//       horizontalSpeed: 75
-//     }
-//   }
-// });
-
-// //initialization TypeScript fluid meter
-// const typeScriptFM = new FluidMeter();
-// typeScriptFM.init({
-//   targetContainer: document.getElementById("typeScript-fluid-meter"),
-//   fillPercentage: 20,
-//   options: {
-//     fontFamily: FMfont,
-//     drawPercentageSign: true,
-//     drawBubbles: true,
-//     drawShadow: false,
-//     size: 300,
-//     borderWidth: 15,
-//     backgroundColor: "#e2e2e2",
-//     foregroundColor: "#fafafa",
-//     foregroundFluidLayer: {
-//       fillStyle: "#2d79c7",
-//       angularSpeed: 100,
-//       maxAmplitude: 12,
-//       frequency: 30,
-//       horizontalSpeed: -75
-//     },
-//     backgroundFluidLayer: {
-//       fillStyle: "#bceaf5",
-//       angularSpeed: 100,
-//       maxAmplitude: 15,
-//       frequency: 30,
-//       horizontalSpeed: 75
-//     }
-//   }
-// });
 
 //handler for scroll top button
 
@@ -1544,7 +1212,7 @@ const scrollTop = function () {
 					},
 					speed,
 					function () {
-						$this.animate({ bottom: currentBottomProp + 'px' }, speed);
+						$this.animate({bottom: currentBottomProp + 'px'}, speed);
 					}
 				);
 			})
@@ -1616,5 +1284,6 @@ $(window).on('load', function () {
 		tMessageDialogBox(viewportWidth, viewportHeight);
 		console.log('document loaded');
 		skillsLinksHandler();
+		hashNavigationHandler();
 	});
 });

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ced3cc6a-f0e3-4163-b4be-7a4389a43671" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/neobliz1.github.io.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/themes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/modules/jquery-3.5.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/modules/recaptcha_api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/themes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/translate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/project2.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/project2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/project3.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/project3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/project4.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/project4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/project5.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/project5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/project_angry_fish.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/project_angry_fish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/project_ants_colony.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/project_ants_colony.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/project_bees_awakening.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/project_bees_awakening.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-3.5.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/jquery-3.5.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/jquery-ui.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.mobile.custom.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/jquery.mobile.custom.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-fluid-meter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modernizr-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/modernizr-custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/p5.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/p5.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/p5.sound.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/p5.sound.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/projectPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/projectPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/projects/project2.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/projects/project2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/projects/project3.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/projects/project3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/projects/project4.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/projects/project4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/projects/project5.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/projects/project5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/projects/project_angry_fish.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/projects/project_angry_fish.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/projects/project_ants_colony.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/projects/project_ants_colony.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/projects/project_bees_awakening.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/projects/project_bees_awakening.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/scrollMagic.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/scrollMagic.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/serviceJs/modules.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/serviceJs/modules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/simpleParallax.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/simpleParallax.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NeoBliz1&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NeoBliz1/neobliz1.github.io.git&quot;,
+    &quot;accountId&quot;: &quot;850d94da-1983-426b-8f6b-73ad4e81cd0a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="3DIbOPXtXKBJrujqoMqDbOW2hK6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "refactoring",
+    "javascript.nodejs.core.library.configured.version": "24.15.0",
+    "javascript.nodejs.core.library.typings.version": "24.12.2",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/muser/IdeaProjects/eco-system-infra",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/home/muser/.config/JetBrains/IntelliJIdea2024.3/node/versions/24.15.0/bin/node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.09940527",
+    "settings.editor.selected.configurable": "http.proxy",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js/modules" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/js/modules" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ced3cc6a-f0e3-4163-b4be-7a4389a43671" name="Changes" comment="" />
+      <created>1777972498430</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777972498430</updated>
+      <workItem from="1777972499517" duration="1443000" />
+      <workItem from="1777978776023" duration="7417000" />
+      <workItem from="1777986272469" duration="593000" />
+      <workItem from="1777986875358" duration="303000" />
+      <workItem from="1777988265885" duration="374000" />
+      <workItem from="1777988649128" duration="47000" />
+      <workItem from="1777988705829" duration="1070000" />
+      <workItem from="1777989784961" duration="77000" />
+      <workItem from="1778045774071" duration="94000" />
+      <workItem from="1778045879891" duration="1459000" />
+      <workItem from="1778047346394" duration="335000" />
+      <workItem from="1778047690887" duration="444000" />
+      <workItem from="1778048193073" duration="2683000" />
+      <workItem from="1778050897404" duration="646000" />
+      <workItem from="1778051549773" duration="421000" />
+      <workItem from="1778051978227" duration="1390000" />
+      <workItem from="1778053377522" duration="139000" />
+      <workItem from="1778053522528" duration="1353000" />
+      <workItem from="1778054884862" duration="205000" />
+      <workItem from="1778072390679" duration="2394000" />
+      <workItem from="1778074841372" duration="215000" />
+      <workItem from="1778075064140" duration="2020000" />
+      <workItem from="1778077095326" duration="2490000" />
+      <workItem from="1778079743036" duration="41000" />
+      <workItem from="1778079793221" duration="118000" />
+      <workItem from="1778079925475" duration="83000" />
+      <workItem from="1778080017754" duration="1725000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="refactoring" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
