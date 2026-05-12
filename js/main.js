@@ -106,8 +106,8 @@ const loaderScreen = function () {
 
 //set parallax img attributes
 const setParallaxImage = function (wSW, wDPR) {
-	let pathToParllaxImg = '../img/cover_bg_3.png';
-	let pathToThmbImg = '../img/ava.png';
+	let pathToParllaxImg = './img/cover_bg_3.png';
+	let pathToThmbImg = './img/ava.png';
 	const setImgPassway = function () {
 		$('.blizThumbnail').css('background-image', 'url(' + pathToThmbImg + ')');
 		$('.slider1, .slider2').attr('src', pathToParllaxImg);
@@ -119,7 +119,6 @@ const setParallaxImage = function (wSW, wDPR) {
 			url: cover_bgUrl,
 			type: 'HEAD',
 			error: function () {
-				pathToParllaxImg = '../img/cover_bg_3.png';
 				setImgPassway();
 				console.log('img is not available');
 			},
@@ -129,18 +128,13 @@ const setParallaxImage = function (wSW, wDPR) {
 				console.log(' img available');
 			}
 		});
-		pathToThmbImg = '../img/ava.png';
 		console.log(pathToParllaxImg);
 	} else if (wSW >= 1800 && wDPR >= 0.25 && wDPR < 3) {
-		pathToParllaxImg = '../img/cover_bg_3.png';
-		pathToThmbImg = '../img/ava.png';
 		setImgPassway();
 	} else if (wSW < 1800 && wSW >= 640 && wDPR >= 3) {
 		pathToParllaxImg = '../img/responsive_Img/cover_bg_3.png';
-		pathToThmbImg = '../img/ava.png';
 		setImgPassway();
 	} else {
-		pathToParllaxImg = '../img/cover_bg_3.png';
 		pathToThmbImg = '../img/responsive_Img/tiny_ava.png';
 		setImgPassway();
 	}

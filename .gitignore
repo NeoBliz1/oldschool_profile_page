@@ -1,33 +1,35 @@
- # Node.js and npm
- node_modules/
- npm-debug.log*
- yarn-debug.log*
- yarn-error.log*
- .pnp/
- .pnp.js
+# Node.js and npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
  
- # Build/Dist folders
- /dist/
- /build/
- /out/
+# Build/Dist folders
+/dist/
+/build/
+/out/
  
  # IDE-specific files (IntelliJ IDEA)
- .idea/
- *.iml
+.idea
+*.iws
+*.iml
+*.ipr
  
- # OS-specific files
- .DS_Store
- Thumbs.db
+# OS-specific files
+.DS_Store
+Thumbs.db
  
- # Environment variables
- .env
- .env.local
+# Environment variables
+.env
+.env.local
  
- # Temporary files
- *.log
- *.tmp
+# Temporary files
+*.log
+*.tmp
  
- # Compressed files (often backups or releases)
- *.zip
- *.rar
- *.7z
+# Compressed files (often backups or releases)
+*.zip
+*.rar
+*.7z
