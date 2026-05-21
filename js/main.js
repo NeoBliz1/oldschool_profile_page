@@ -227,9 +227,6 @@ const mySkillsAnimation = function () {
 									projectDivFullSizeState = true;
 									projectDivFullSize(thisIs);
 								}
-								// if (event.currentTarget.id === 'vpb') {
-								// 	$('.hovered').trigger('mouseleave').removeClass('hovered');
-								// }
 							});
 					}
 				},
@@ -510,28 +507,6 @@ const mySkillsAnimation = function () {
 		//set close button font-size
 		$('.closeButton').scaleCloseButton(divCurrentHeight, divCurrentWidth);
 
-		//show close button
-		// $('.closeButton')
-		// 	.removeClass('hidden')
-		// 	.hide()
-		// 	.fadeIn(DSdurationTime)
-		// 	.hover(
-		// 		function () {
-		// 			$(this)
-		// 				.find('.fa-times-circle')
-		// 				.removeClass('far')
-		// 				.addClass('fas')
-		// 				.fadeIn(DSdurationTime);
-		// 		},
-		// 		function () {
-		// 			$(this)
-		// 				.find('.fa-times-circle')
-		// 				.removeClass('fas')
-		// 				.addClass('far')
-		// 				.fadeIn(DSdurationTime);
-		// 		}
-		// 	);
-
 		//overlay click handler
 		const $closeButton = $('#fullSizeSkillBoxOverlay, .closeButton');
 		$closeButton.click(function (event) {
@@ -540,6 +515,7 @@ const mySkillsAnimation = function () {
 			/* Act on the event */
 			projectDivFullSizeState = false;
 			projectDivMinimize(this, currentDivOffset);
+			$(thisIs).trigger('mouseleave');
 		});
 		//add esc key listner for close enhanced div
 		$(document).keyup(function (e) {
