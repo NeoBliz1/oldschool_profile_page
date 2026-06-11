@@ -1,95 +1,100 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+  <meta content="IE=edge" http-equiv="x-ua-compatible"/>
   <meta charset="UTF-8"/>
-  <meta name="description" content="Profile page showcasing neobliz1's skills"/>
-  <meta name="keywords" content="neoBliz1 profile, neoBliz1's skills"/>
-  <meta name="author" content="neoBliz1"/>
-  <meta name="robots" content="all"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="content-security-policy" content="interest-cohort=()"/>
+  <meta content="Profile page showcasing neobliz1's skills" name="description"/>
+  <meta content="neoBliz1 profile, neoBliz1's skills" name="keywords"/>
+  <meta content="neoBliz1" name="author"/>
+  <meta content="all" name="robots"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="interest-cohort=()" http-equiv="content-security-policy"/>
 
   <title>neobliz1 profile</title>
   <link
       href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display:500|Biryani|Caveat&display=swap"
       rel="stylesheet"
   />
-  <link rel="stylesheet" href="css/normalize.css"/>
-  <link rel="stylesheet" href="css/styles.css"/>
-  <link rel="stylesheet" href="css/themes.css"/>
-  <link rel="stylesheet" href="css/jquery-ui-css/jquery-ui.min.css"/>
-  <link rel="stylesheet" href="css/animate.css"/>
-  <link rel="stylesheet" href="css/all.min.css"/>
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+  <link href="css/normalize.css" rel="stylesheet"/>
+  <link href="css/styles.css" rel="stylesheet"/>
+  <link href="css/themes.css" rel="stylesheet"/>
+  <link href="css/jquery-ui-css/jquery-ui.min.css" rel="stylesheet"/>
+  <link href="css/animate.css" rel="stylesheet"/>
+  <link href="css/all.min.css" rel="stylesheet"/>
+  <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 </head>
 
 <body>
 <div class="loader-gif"></div>
 <main class="main flex_box">
-  <button id="lang-toggle" aria-label="Toggle language">
+  <button aria-label="Toggle language" id="lang-toggle">
     <i class="fas fa-globe"></i>
   </button>
-  <button id="theme-toggle" aria-label="Toggle theme">
+  <button aria-label="Toggle theme" id="theme-toggle">
     <i class="fas fa-moon"></i>
   </button>
   <!-- tMessage button -->
-  <button class="messageButton" tabindex="1" aria-label="Write a message">
+  <button aria-label="Write a message" class="messageButton" tabindex="1">
     <i class="fab fa-telegram-plane"></i>
   </button>
 
   <!-- message dialog -->
-  <div id="tMessageDialog" title="Message to me">
+  <div id="tMessageDialog" title="Message to me" data-translate-title="tMessageDialogTitle">
     <div class="thoughtContainer">
-      <p class="thought robotThought">Hi there, I hope you are doing well.</p>
+      <p class="thought robotThought" data-translate="robotThought1">Hi there, I hope you are doing well.</p>
       <i class="fas fa-robot"></i>
-      <p class="thought robotThought">
+      <p class="thought robotThought" data-translate="robotThought2">
         I'm tChatBot, you can text me anything. I will resend your message to
         the master.<br/>
         It typically takes 1-2 minutes to respond.
       </p>
       <i class="fas fa-robot"></i>
+      <div class="chatStream"></div>
     </div>
     <form action="">
-      <label for="nickName">Enter your nickname:</label>
+      <label for="nickName" data-translate="nickNameLabel">Enter your nickname:</label>
       <input
-          type="text"
           id="nickName"
+          minlength="1"
           name="nickName"
           placeholder="nickName"
+          data-translate-placeholder="nickNamePlaceholder"
           required
-          minlength="1"
           tabindex="2"
+          type="text"
       />
       <textarea
-          name="tMessageArea"
-          id="tMessageArea"
-          placeholder="Type there!!)"
           cols="40"
+          id="tMessageArea"
+          minlength="1"
+          name="tMessageArea"
+          placeholder="Type there!!)"
+          data-translate-placeholder="messagePlaceholder"
+          required
           rows="2"
           spellcheck="true"
-          required
-          minlength="1"
           tabindex="3"
       ></textarea>
       <div class="sendBlock">
-        <button class="sendBtn" tabindex="5">send</button>
+        <button class="sendBtn" tabindex="5" data-translate="sendButton">send</button>
         <div class="g-recaptcha-container">
           <div
               class="g-recaptcha"
-              data-sitekey="6LfhIFAaAAAAADP9r_20uuqTdqvKQUH4hsWzTLGT"
+              data-sitekey="6Lc83gotAAAAAFtrV49_fGgIXORq9viNgws9o5FY"
+              data-action="TEXT_MSG"
               data-tabindex="4"
           ></div>
           <input
-              type="text"
               id="recaptchaCheck"
-              required
               minlength="1"
+              required
               tabindex="-1"
+              type="submit"
+              value="Submit"
           />
         </div>
-
-        <input type="hidden" autofocus="true"/>
+        <div id="recaptcha-error-message" style="color: red; display: none;" data-translate="recaptchaErrorMessage">Please complete the reCAPTCHA</div>
+        <input autofocus="autofocus" type="hidden"/>
       </div>
     </form>
   </div>
@@ -100,59 +105,60 @@
     </div>
     <aside class="links_to_acc">
       <a
-          href="https://www.khanacademy.org/profile/NeoBliz"
-          target="blank_"
-          rel="noreferrer"
-          class="kacademy_logo logo_prop"
           aria-label="khanacademy profile"
+          class="kacademy_logo logo_prop"
+          href="https://www.khanacademy.org/profile/NeoBliz"
+          rel="noreferrer"
+          target="blank_"
       >
       </a>
       <a
-          href="https://www.codecademy.com/profiles/neobliz1"
-          target="blank_"
-          rel="noreferrer"
           aria-label="Codecademy profile"
           class="codecademy_logo logo_prop"
+          href="https://www.codecademy.com/profiles/neobliz1"
+          rel="noreferrer"
+          target="blank_"
       >
       </a>
       <a
-          href="https://www.freecodecamp.org/neobliz1"
-          target="blank_"
-          rel="noreferrer"
           aria-label="freecodecapmp profile"
           class="freecodecamp_logo logo_prop"
+          href="https://www.freecodecamp.org/neobliz1"
+          rel="noreferrer"
+          target="blank_"
       >
       </a>
       <a
-          href="https://github.com/NeoBliz1"
-          target="blank_"
-          rel="noreferrer"
           aria-label="github profile"
           class="github_logo logo_prop"
+          href="https://github.com/NeoBliz1"
+          rel="noreferrer"
+          target="blank_"
       >
       </a>
     </aside>
     <figure class="headerContent flex_box">
-      <figure class="blizThumbnail" alt="Profile photo"></figure>
+      <figure alt="Profile photo" class="blizThumbnail"></figure>
       <h1 class="mainHeader" data-translate="mainHeader">- Ilya Grebenshchikov -</h1>
       <p data-translate="mainSubHeader">Coding enthusiast and Dreamer</p>
     </figure>
   </header>
   <!-- aboutProfile -->
-  <section id="aboutProfile" class="about flex_box">
+  <section class="about flex_box" id="aboutProfile">
     <article class="helloBlock flex_box">
       <h1 data-translate="helloHeader">
         Hello There! <br/>
-        I'm Ilya, a <span style="text-decoration: line-through; text-decoration-color: red;">web</span> Java software engineer with some knowledge about web dev from Chelyabinsk, Russian Federation.
+        I'm Ilya, a <span style="text-decoration: line-through; text-decoration-color: red;">web</span> Java software
+        engineer with some knowledge about web dev from Chelyabinsk, Russian Federation.
         Please take a look around!
       </h1>
-      <p tabindex="0" data-translate="passionateText">
+      <p data-translate="passionateText" tabindex="0">
         I am passionate about creating apps. Although web
         development is my hobby. I'am a backend developer.
       </p>
     </article>
 
-    <article id="code_pathway" class="gridBoxWicd">
+    <article class="gridBoxWicd" id="code_pathway">
       <div class="wicdCont">
         <h1 class="scrollAnimate wicdHeader justifySelfCenter" data-translate="coderPathwayHeader">
           My Coder Pathway.
@@ -167,9 +173,9 @@
             <p>
               <span data-translate="khanAcademyText"></span>
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   href="https://www.khanacademy.org/profile/NeoBliz"
+                  rel="noreferrer"
+                  target="blank_"
               >Khan Academy</a>.
               <span data-translate="khanAcademyText2"></span>
             </p>
@@ -185,15 +191,15 @@
             <p>
               <span data-translate="mdnText"></span>
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   href="https://developer.mozilla.org/en-US/docs/Learn"
+                  rel="noreferrer"
+                  target="blank_"
               >MDN Learning Center</a>
               <span data-translate="mdnText2"></span>
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   href="https://learn.jquery.com"
+                  rel="noreferrer"
+                  target="blank_"
               >jQuery Learning Center</a>.
               <span data-translate="mdnText3"></span>
             </p>
@@ -209,9 +215,9 @@
             <p>
               <span data-translate="codecademyText"></span>
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   href="https://www.codecademy.com/profiles/neobliz1"
+                  rel="noreferrer"
+                  target="blank_"
               >Codecademy</a>.
               <span data-translate="codecademyText2"></span>
             </p>
@@ -227,15 +233,15 @@
             <p>
               <span data-translate="freeCodeCampText1"></span>
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   href="https://www.freecodecamp.org/learn"
+                  rel="noreferrer"
+                  target="blank_"
               >freeCodeCamp.org</a>.
               <span data-translate="freeCodeCampText2"></span>
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   href="https://freecodecamp.org/certification/neobliz1/javascript-algorithms-and-data-structures"
+                  rel="noreferrer"
+                  target="blank_"
               >Certificate</a>.
               <br/><span data-translate="freeCodeCampText3"></span>
             </p>
@@ -318,9 +324,9 @@
     </article>
   </section>
   <!-- skillsMeter -->
-  <section id="skillsMeter" class="mySkills flex_box">
+  <section class="mySkills flex_box" id="skillsMeter">
     <div class="overlayImgContainer" style="opacity: 1">
-      <img class="slider2"/>
+      <img alt="slider2" class="slider2"/>
     </div>
     <div class="skillsProgressContainer flex_box">
       <h1 data-translate="skillsHeader">My skills meter</h1>
@@ -328,37 +334,31 @@
         <div class="container__progressbars">
           <!-- html -->
           <div class="progresBarContainer">
-            <div id="html" class="progressbar">
-              <svg class="progressbar__svg">
-                <circle
-                    data-circle-name="html"
-                    class="progressbar__svg-circle shadow-html"
-                ></circle>
-              </svg>
+            <div class="progressbar" id="html">
               <span class="progressbar__text shadow-html"
               ><i class="skillsIcon ico-html5"></i
               ></span>
             </div>
             <div class="linksContainer shadow-html">
               <a
-                  id="profilePage_S_Link"
                   class="beforeSkillLink"
                   data-linkToElement="project_1"
                   href=""
+                  id="profilePage_S_Link"
               >Profile page</a
               >
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   class="centerSkillLink"
                   href="https://codesandbox.io/s/neobliz-mozilla-splash-page-323mf"
+                  rel="noreferrer"
+                  target="blank_"
               >Mozilla splash page</a
               >
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   class="beforeSkillLink"
                   href="https://codesandbox.io/s/fakebirdwatchingsite-2hnqu"
+                  rel="noreferrer"
+                  target="blank_"
               >Fake birdwatching site</a
               >
               <!-- <a target="blank_"  rel="noreferrer"class="lastSkillLink">Link</a> -->
@@ -366,37 +366,31 @@
           </div>
           <!-- CSS -->
           <div class="progresBarContainer">
-            <div id="CSS" class="progressbar">
-              <svg class="progressbar__svg">
-                <circle
-                    data-circle-name="css"
-                    class="progressbar__svg-circle shadow-css"
-                ></circle>
-              </svg>
+            <div class="progressbar" id="CSS">
               <span class="progressbar__text shadow-css"
               ><i class="skillsIcon ico-css3"></i
               ></span>
             </div>
             <div class="linksContainer shadow-css">
               <a
-                  id="profilePage_S_Link"
                   class="beforeSkillLink"
                   data-linkToElement="project_1"
                   href=""
+                  id="profilePage_S_Link"
               >Profile page</a
               >
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   class="centerSkillLink"
                   href="https://codesandbox.io/s/fonts-styling-assesment-eil2w"
+                  rel="noreferrer"
+                  target="blank_"
               >Mozilla Fonts styling</a
               >
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   class="beforeSkillLink"
                   href="https://codesandbox.io/s/not-responsive-milky-way-site-demo-7r7jk?file=/src/styles.css"
+                  rel="noreferrer"
+                  target="blank_"
               >Mozilla milky way</a
               >
               <!-- <a target="blank_"  rel="noreferrer"class="lastSkillLink">Link</a> -->
@@ -404,328 +398,306 @@
           </div>
           <!-- JS -->
           <div class="progresBarContainer">
-            <div id="JS" class="progressbar">
-              <svg class="progressbar__svg">
-                <circle
-                    data-circle-name="js"
-                    class="progressbar__svg-circle shadow-js"
-                 r=""></circle>
-              </svg>
+            <div class="progressbar" id="JS">
               <span class="progressbar__text shadow-js"
               ><i class="skillsIcon ico-js"></i
               ></span>
             </div>
             <div class="linksContainer shadow-js">
               <a
-                  id="codeReminder_S_Link"
                   class="beforeSkillLink"
                   data-linkToElement="react_project_1"
                   href=""
+                  id="codeReminder_S_Link"
               >Code reminder</a
               >
               <a
-                  id="profilePage_S_Link"
                   class="centerSkillLink"
                   data-linkToElement="project_1"
                   href=""
+                  id="profilePage_S_Link"
               >Profile page</a
               >
               <a
-                  id="ohNoGuy_extreme_hope_S_Link"
                   class="centerSkillLink"
                   data-linkToElement="project_5"
                   href=""
+                  id="ohNoGuy_extreme_hope_S_Link"
               >OhNoGuy extreme hope</a
               >
               <a
-                  id="memoryGame_S_Link"
                   class="beforeSkillLink"
                   data-linkToElement="project_4"
                   href=""
+                  id="memoryGame_S_Link"
               >Memory game</a
               >
             </div>
           </div>
           <!-- p5js -->
           <div class="progresBarContainer">
-            <div id="p5js" class="progressbar">
-              <svg class="progressbar__svg">
-                <circle
-                    data-circle-name="p5js"
-                    class="progressbar__svg-circle circle-angular shadow-p5js"
-                ></circle>
-              </svg>
+            <div class="progressbar" id="p5js">
               <span class="progressbar__text shadow-p5js"
               ><i class="skillsIcon ico-p5js"></i
               ></span>
             </div>
             <div class="linksContainer shadow-p5js">
               <a
-                  id="project_ants_colony_S_Link"
                   class="firstSkillLink"
                   data-linkToElement="project_ants_colony"
                   href=""
+                  id="project_ants_colony_S_Link"
               >Ants colony</a
               >
               <a
-                  id="project_bees_awakening_S_Link"
                   class="beforeSkillLink"
                   data-linkToElement="project_bees_awakening"
                   href=""
+                  id="project_bees_awakening_S_Link"
               >Bees awakening</a
               >
               <a
-                  id="project_angry_fish_S_Link"
                   class="centerSkillLink"
                   data-linkToElement="project_angry_fish"
                   href=""
+                  id="project_angry_fish_S_Link"
               >Angry fish</a
               >
               <a
-                  id="ohNoGuy_extreme_hope_S_Link"
                   class="beforeSkillLink"
                   data-linkToElement="project_5"
                   href=""
+                  id="ohNoGuy_extreme_hope_S_Link"
               >OhNoGuy hope</a
               >
               <a
-                  id="memoryGame_S_Link"
                   class="lastSkillLink"
                   data-linkToElement="project_4"
                   href=""
+                  id="memoryGame_S_Link"
               >Memory game</a
               >
             </div>
           </div>
           <!-- bootstrap -->
           <div class="progresBarContainer">
-            <div id="bootstrap" class="progressbar">
-              <svg class="progressbar__svg">
-                <circle
-                    data-circle-name="bootstrap"
-                    class="progressbar__svg-circle shadow-bootstrap"
-                ></circle>
-              </svg>
+            <div class="progressbar" id="bootstrap">
               <span class="progressbar__text shadow-bootstrap"
               ><i class="skillsIcon ico-bootstrap"></i
               ></span>
             </div>
             <div class="linksContainer shadow-bootstrap">
               <a
-                  id="codeReminder_S_Link"
                   class="firstSkillLink"
                   data-linkToElement="react_project_1"
                   href=""
+                  id="codeReminder_S_Link"
               >Code reminder</a
               >
               <a
-                  id="react_FGAT_S_Link"
                   class="beforeSkillLink"
                   data-linkToElement="typescript_react_FGAT"
                   href=""
+                  id="react_FGAT_S_Link"
               >Artithmetic Trainer</a
               >
               <a
-                  id="react_JSC_project_S_Link"
                   class="centerSkillLink"
                   data-linkToElement="react_JSC_project_5"
                   href=""
+                  id="react_JSC_project_S_Link"
               >JS calculator</a
               >
               <a
-                  id="react_DP_project_S_Link"
                   class="beforeSkillLink"
                   data-linkToElement="react_DP_project_4"
                   href=""
+                  id="react_DP_project_S_Link"
               >Drum pad</a
               >
               <a
-                  id="react_MP_project_S_Link"
                   class="lastSkillLink"
                   data-linkToElement="react_MP_project_3"
                   href=""
+                  id="react_MP_project_S_Link"
               >Markdown previewer</a
               >
             </div>
           </div>
           <!-- SASS -->
           <div class="progresBarContainer">
-            <div id="SASS" class="progressbar">
-              <svg class="progressbar__svg">
-                <circle
-                    data-circle-name="scss"
-                    class="progressbar__svg-circle shadow-scss"
-                ></circle>
-              </svg>
+            <div class="progressbar" id="SASS">
               <span class="progressbar__text shadow-scss"
               ><i class="skillsIcon ico-sass"></i
               ></span>
             </div>
             <div class="linksContainer shadow-scss">
               <a
-                  id="codeReminder_S_Link"
                   class="centerSkillLink"
                   data-linkToElement="react_project_1"
                   href=""
+                  id="codeReminder_S_Link"
               >Code reminder</a
               >
-              <!-- <a target="blank_"  rel="noreferrer">Link</a>
-              <a target="blank_"  rel="noreferrer">Link</a>
-              <a target="blank_"  rel="noreferrer"class="lastSkillLink">Link</a> -->
             </div>
           </div>
           <!-- React -->
           <div class="progresBarContainer">
-            <div id="react" class="progressbar">
-              <svg class="progressbar__svg">
-                <circle
-                    data-circle-name="react"
-                    class="progressbar__svg-circle shadow-react"
-                ></circle>
-              </svg>
+            <div class="progressbar" id="react">
               <span class="progressbar__text shadow-react"
               ><i class="skillsIcon ico-react"></i
               ></span>
             </div>
             <div class="linksContainer shadow-react">
               <a
-                  id="codeReminder_S_Link"
                   class="firstSkillLink"
                   data-linkToElement="react_project_1"
                   href=""
-              >Code reminder</a
-              >
+                  id="codeReminder_S_Link"
+              >Code reminder</a>
               <a
-                  id="TFPFC_S_Link"
                   class="beforeSkillLink"
                   data-linkToElement="react_TFPFC_project_6"
                   href=""
-              >25 + 5 clock</a
-              >
+                  id="TFPFC_S_Link"
+              >25 + 5 clock</a>
               <a
-                  id="react_JSC_project_S_Link"
-                  class="centerSkillLink"
-                  data-linkToElement="react_JSC_project_5"
-                  href=""
-              >JS calculator</a
-              >
-              <a
-                  id="react_DP_project_S_Link"
-                  class="centerSkillLink"
-                  data-linkToElement="react_DP_project_4"
-                  href=""
-              >Drum pad</a
-              >
-              <a
-                  id="react_FGAT_S_Link"
                   class="beforeSkillLink"
                   data-linkToElement="typescript_react_FGAT"
                   href=""
+                  id="react_FGAT_S_Link"
               >Artithmetic Trainer</a
               >
-              <a
-                  id="RQM_project_S_Link"
-                  class="lastSkillLink"
-                  data-linkToElement="react_RQM_project_2"
-                  href=""
-              >Random quote machine</a
-              >
-            </div>
-          </div>
-          <!-- Redux -->
-          <div class="progresBarContainer">
-            <div id="redux" class="progressbar">
-              <svg class="progressbar__svg">
-                <circle
-                    data-circle-name="redux"
-                    class="progressbar__svg-circle shadow-redux"
-                ></circle>
-              </svg>
-              <span class="progressbar__text shadow-redux"
-              ><i class="skillsIcon ico-redux"></i
-              ></span>
-            </div>
-            <div class="linksContainer shadow-redux">
-              <a
-                  id="codeReminder_S_Link"
-                  class="centerSkillLink"
-                  data-linkToElement="react_project_1"
-                  href=""
-              >Code reminder</a
-              >
-              <!-- <a target="blank_"  rel="noreferrer"class="firstSkillLink">Link</a>
-              <a target="blank_"  rel="noreferrer">Link</a>
-              <a target="blank_"  rel="noreferrer">Link</a>
-              <a target="blank_"  rel="noreferrer"class="lastSkillLink">Link</a> -->
             </div>
           </div>
           <!-- TypeScript	 -->
           <div class="progresBarContainer">
-            <div id="typeScript" class="progressbar">
-              <svg class="progressbar__svg">
-                <circle
-                    data-circle-name="ts"
-                    class="progressbar__svg-circle shadow-ts"
-                ></circle>
-              </svg>
-              <span class="progressbar__text shadow-ts"
-              ><i class="skillsIcon ico-typeScript"></i
-              ></span>
+            <div class="progressbar" id="typeScript">
+              <span class="progressbar__text shadow-ts"><i class="skillsIcon ico-typeScript"></i></span>
             </div>
             <div class="linksContainer shadow-ts">
               <a
-                  id="TFPFC_S_Link"
+                  class="firstSkillLink"
+                  data-linkToElement="react_project_1"
+                  href=""
+                  id="codeReminder_S_Link"
+              >Code reminder</a>
+              <a
                   class="centerSkillLink"
                   data-linkToElement="react_TFPFC_project_6"
                   href=""
-              >25 + 5 clock</a
-              >
+                  id="TFPFC_S_Link"
+              >25 + 5 clock</a>
               <a
-                  id="react_FGAT_S_Link"
                   class="centerSkillLink"
                   data-linkToElement="typescript_react_FGAT"
                   href=""
-              >Artithmetic Trainer</a
-              >
+                  id="react_FGAT_S_Link"
+              >Artithmetic Trainer</a>
             </div>
           </div>
           <!-- webpack -->
           <div class="progresBarContainer">
-            <div id="webpack" class="progressbar">
-              <svg class="progressbar__svg">
-                <circle
-                    data-circle-name="webpack"
-                    class="progressbar__svg-circle shadow-webpack"
-                ></circle>
-              </svg>
+            <div class="progressbar" id="webpack">
               <span class="progressbar__text shadow-webpack"
               ><i class="skillsIcon ico-webpack"></i
               ></span>
             </div>
             <div class="linksContainer shadow-webpack">
               <a
-                  id="codeReminder_S_Link"
                   class="centerSkillLink"
                   data-linkToElement="react_project_1"
                   href=""
-              >Code reminder</a
-              >
-              <!-- <a target="blank_"  rel="noreferrer"class="firstSkillLink">Link</a>
-              <a target="blank_"  rel="noreferrer">Link</a>
-              <a target="blank_"  rel="noreferrer">Link</a>
-              <a target="blank_"  rel="noreferrer"class="lastSkillLink">Link</a> -->
+                  id="codeReminder_S_Link"
+              >Code reminder</a>
+            </div>
+          </div>
+          <!-- Java -->
+          <div class="progresBarContainer">
+            <div class="progressbar" id="java">
+              <span class="progressbar__text shadow-icon-java"
+              ><i class="skillsIcon ico-java"></i
+              ></span>
+            </div>
+            <div class="linksContainer shadow-java">
+              <a
+                  class="centerSkillLink"
+                  data-linkToElement="java_kafka_demo"
+                  href=""
+                  id="kafka_raft_S_Link"
+              >Kafka raft scram auth</a>
+            </div>
+          </div>
+          <!-- C -->
+          <div class="progresBarContainer">
+            <div class="progressbar" id="C">
+              <span class="progressbar__text shadow-icon-java"
+              ><i class="skillsIcon ico-c"></i
+              ></span>
+            </div>
+            <div class="linksContainer shadow-bootstrap">
+              <a
+                  class="centerSkillLink"
+                  data-linkToElement="c_25_plus_5"
+                  href=""
+                  id="c_25_plus_5_S_Link"
+              >25 clock 5 app for linux as .deb package</a>
             </div>
           </div>
         </div>
       </div>
-      <img class="canvas_render"/>
     </div>
   </section>
   <!-- projectList -->
-  <section id="projectList" class="about flex_box">
+  <section class="about flex_box" id="projectList">
     <div class="mySkillsContent flex_box">
-      <h1 tabindex="0" data-translate="projectsHeader">Project list</h1>
-      <div id="exContainer" class="examplesContainer">
+      <h1 data-translate="projectsHeader" tabindex="0">Project list</h1>
+      <div class="examplesContainer" id="exContainer">
+        <!-- c_25_plus_5 -->
+        <div
+            class="c_25_plus_5 projectDiv projectWithDescription"
+            tabindex="0"
+        >
+          <i class="fas fa-search-plus zoomInIcon"></i>
+          <div class="bottomPart">
+            <h2 class="paragraphMSD hidden">
+              "C" implementation of the 25 clock 5 app for linux as .deb package
+            </h2>
+            <a
+                class="viewProject hidden"
+                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=25c5cPost"
+                id="vpb"
+                rel="noreferrer"
+                target="blank_"
+            >project details</a
+            >
+            <p class="bottomParagraphMSD paragraphMSD hidden">
+              The goal for this project was to build a lightweight, sub-2MB native Linux desktop reference application
+              using C and GTK3 to mitigate physical sedentary fatigue and back pain.
+            </p>
+          </div>
+        </div>
+        <!-- java_kafka_demo -->
+        <div
+            class="java_kafka_demo projectDiv projectWithDescription"
+            tabindex="0"
+        >
+          <i class="fas fa-search-plus zoomInIcon"></i>
+          <div class="bottomPart">
+            <a
+                class="viewProject hidden"
+                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=krsaPost"
+                id="vpb"
+                rel="noreferrer"
+                target="blank_"
+            >project details</a
+            >
+            <p class="bottomParagraphMSD paragraphMSD hidden">
+              Java + Spring Boot demo + Kafka raft scram auth demo project.
+              Durable, persistent, reliable message broker.
+            </p>
+          </div>
+        </div>
         <!-- typescript_react_FGAT -->
         <div
             class="typescript_react_FGAT projectDiv projectWithDescription"
@@ -737,11 +709,11 @@
               First-grade arithmetic trainer project.
             </h2>
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
+                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=1gradeArithmeticTrainer"
                 id="vpb"
-                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=first_grade_arithmetic_trainer"
+                rel="noreferrer"
+                target="blank_"
             >project details</a
             >
             <p class="bottomParagraphMSD paragraphMSD hidden">
@@ -765,11 +737,11 @@
               Twenty-five plus five clock project. #freeCodeCamp project.
             </h2>
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
+                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=25plus5clockPost"
                 id="vpb"
-                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=twenty_five_plus_five_clock"
+                rel="noreferrer"
+                target="blank_"
             >project details</a
             >
             <p class="bottomParagraphMSD paragraphMSD hidden">
@@ -792,11 +764,11 @@
               JavaScript calculator #freeCodeCamp project.
             </h2>
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
+                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=calcPost"
                 id="vpb"
-                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=javaScript_calculator"
+                rel="noreferrer"
+                target="blank_"
             >project details</a
             >
             <p class="bottomParagraphMSD paragraphMSD hidden">
@@ -818,11 +790,11 @@
               Drum machine #freeCodeCamp project.
             </h2>
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
+                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=dmPost"
                 id="vpb"
-                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=drum_machine"
+                rel="noreferrer"
+                target="blank_"
             >project details</a
             >
             <p class="bottomParagraphMSD paragraphMSD hidden">
@@ -844,11 +816,11 @@
               Markdown Previewer #freeCodeCamp project.
             </h2>
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
+                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=mpPost"
                 id="vpb"
-                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=markdown_previewer"
+                rel="noreferrer"
+                target="blank_"
             >project details</a
             >
             <p class="bottomParagraphMSD paragraphMSD hidden">
@@ -870,11 +842,11 @@
               Random Quote Machine #freeCodeCamp project.
             </h2>
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
+                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=rqmPost"
                 id="vpb"
-                href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react/?redirect=random_quote_machine"
+                rel="noreferrer"
+                target="blank_"
             >project details
             </a>
             <p class="bottomParagraphMSD paragraphMSD hidden">
@@ -897,19 +869,19 @@
             </h2>
             <div class="codeReminderLinksContainer">
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   class="viewProject hidden"
-                  id="vpb"
                   href="https://neobliz1.github.io/personal_blog_bootstrapped_by_react"
+                  id="vpb"
+                  rel="noreferrer"
+                  target="blank_"
               >show project</a
               >
               <a
-                  target="blank_"
-                  rel="noreferrer"
                   class="viewProject hidden"
-                  id="vpb"
                   href="https://github.com/NeoBliz1/personal_blog_bootstrapped_by_react/blob/master/src/app/App.js"
+                  id="vpb"
+                  rel="noreferrer"
+                  target="blank_"
               >show code</a
               >
             </div>
@@ -929,11 +901,11 @@
           <div class="bottomPart">
             <h2 class="paragraphMSD hidden">Profile page</h2>
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
-                id="vpb"
                 href="https://github.com/NeoBliz1/neobliz1.github.io/blob/master/js/main.js"
+                id="vpb"
+                rel="noreferrer"
+                target="blank_"
             >show code</a
             >
             <p class="bottomParagraphMSD paragraphMSD hidden">
@@ -951,11 +923,11 @@
           <i class="fas fa-search-plus zoomInIcon"></i>
           <div class="bottomPart">
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
-                id="vpb"
                 href="html/project_ants_colony.html"
+                id="vpb"
+                rel="noreferrer"
+                target="blank_"
             >view project</a
             >
           </div>
@@ -965,11 +937,11 @@
           <i class="fas fa-search-plus zoomInIcon"></i>
           <div class="bottomPart">
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
-                id="vpb"
                 href="html/project_bees_awakening.html"
+                id="vpb"
+                rel="noreferrer"
+                target="blank_"
             >view project</a
             >
           </div>
@@ -979,11 +951,11 @@
           <i class="fas fa-search-plus zoomInIcon"></i>
           <div class="bottomPart">
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
-                id="vpb"
                 href="html/project_angry_fish.html"
+                id="vpb"
+                rel="noreferrer"
+                target="blank_"
             >view project</a
             >
           </div>
@@ -993,11 +965,11 @@
           <i class="fas fa-search-plus zoomInIcon"></i>
           <div class="bottomPart">
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
-                id="vpb"
                 href="html/project5.html"
+                id="vpb"
+                rel="noreferrer"
+                target="blank_"
             >view project</a
             >
           </div>
@@ -1007,11 +979,11 @@
           <i class="fas fa-search-plus zoomInIcon"></i>
           <div class="bottomPart">
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
-                id="vpb"
                 href="html/project4.html"
+                id="vpb"
+                rel="noreferrer"
+                target="blank_"
             >view project</a
             >
           </div>
@@ -1021,11 +993,11 @@
           <i class="fas fa-search-plus zoomInIcon"></i>
           <div class="bottomPart">
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
-                id="vpb"
                 href="html/project3.html"
+                id="vpb"
+                rel="noreferrer"
+                target="blank_"
             >view project</a
             >
           </div>
@@ -1035,11 +1007,11 @@
           <i class="fas fa-search-plus zoomInIcon"></i>
           <div class="bottomPart">
             <a
-                target="blank_"
-                rel="noreferrer"
                 class="viewProject hidden"
-                id="vpb"
                 href="html/project2.html"
+                id="vpb"
+                rel="noreferrer"
+                target="blank_"
             >view project</a
             >
           </div>
@@ -1050,14 +1022,14 @@
 
   <footer>
     <p>Third-party libraries used in this project</p>
-    <a target="blank_" rel="noreferrer " href="https://simpleparallax.com/"
+    <a href="https://simpleparallax.com/" rel="noreferrer " target="blank_"
     >simpleParallax.js</a
     >
-    <a target="blank_" rel="noreferrer " href="http://scrollmagic.io"
+    <a href="http://scrollmagic.io" rel="noreferrer " target="blank_"
     >ScrollMagic.js</a
     >
-    <a target="blank_" rel="noreferrer " href="https://p5js.org/">p5.js</a>
-    <a target="blank_" rel="noreferrer " href="https://modernizr.com/"
+    <a href="https://p5js.org/" rel="noreferrer " target="blank_">p5.js</a>
+    <a href="https://modernizr.com/" rel="noreferrer " target="blank_"
     >modernizr.js</a
     >
     <!-- <a target="blank_"  rel="noreferrer "href="https://github.com/aarcoraci">JavascriptFluidMeter.js</a> -->
@@ -1079,12 +1051,13 @@
 <!-- img parallax -->
 <script src="js/modules/simpleParallax.js" type="text/javascript"></script>
 <!-- google recaptcha2 -->
-<script src="js/modules/recaptcha_api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?onload=initRecaptcha&render=explicit" async defer></script>
 <!-- my module function -->
 <script src="js/serviceJs/modules.js" type="text/javascript"></script>
 <!-- Main -->
 <script src="js/main.js" type="text/javascript"></script>
 <script src="js/translate.js" type="text/javascript"></script>
+<script src="js/chatUtils.js" type="text/javascript"></script>
 <script src="js/themes.js" type="text/javascript"></script>
 </body>
 </html>

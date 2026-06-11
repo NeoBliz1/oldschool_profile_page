@@ -724,7 +724,6 @@ const resizeHandler = function () {
 		) {
 			browserInitialWidth = currBrowserWidth;
 			windowOuterHeight = currBrowserHeight;
-			$('#tMessageDialog').dialog('close'); //close current message dialog
 			projectDivSizeHandler(
 				viewportWidth,
 				viewportHeight,
@@ -733,8 +732,6 @@ const resizeHandler = function () {
 				browserInitialWidth
 			);
 			cloneDivSizeHandler(viewportHeight, viewportWidth);
-			tMessageDialogBox(viewportWidth, viewportHeight);
-			// console.log('font and divs resize is happend');
 		}
 		setParallaxImage(wSW, wDPR);
 		$('.slider1').one('load', function (event) {
@@ -747,6 +744,8 @@ const resizeHandler = function () {
 			resizeHandler();
 			// console.log('renewPage is finished');
 		});
+		$('#tMessageDialog').dialog('close');
+		console.log('font and divs resize is happend');
 	});
 };
 //this function is sensitive to resize event
@@ -976,227 +975,8 @@ const cloneDivSizeHandler = function (viewportHeight, viewportWidth) {
 		});
 	}
 };
-//handler for tMessage box
-//this function is sensitive to resize event
-const tMessageDialogBox = function (viewportWidth, viewportHeight) {
-	//dialog init variables
-	let titleFontSize,
-		messagesFontSize,
-		robotFontsize,
-		userIconSize,
-		targetWidth,
-		targetHeight,
-		thHeight;
-
-	jQuery.fn.scrollToLastMsg = function () {
-		const $this = $(this);
-		$this.scrollTop($this[0].scrollHeight);
-		return this;
-	};
-	jQuery.fn.fixUserIconSize = function () {
-		const $this = $(this);
-		$this.css({
-			width: userIconSize,
-			height: userIconSize,
-			'min-height': userIconSize
-		});
-		return this;
-	};
-	let pOf, pAt, pMy;
-	if (platformIsMobile) {
-		targetWidth = viewportWidth * 0.8;
-		targetHeight = viewportHeight * 0.7;
-		// console.log(targetWidth)
-		if (viewportWidth > viewportHeight) {
-			titleFontSize = targetHeight / 18;
-			messagesFontSize = titleFontSize / 1.5;
-			robotFontsize = targetHeight / 15;
-			userIconSize = targetHeight / 10;
-		} else {
-			titleFontSize = targetHeight / 25;
-			messagesFontSize = titleFontSize / 1.5;
-			robotFontsize = targetHeight / 20;
-			userIconSize = targetHeight / 10;
-		}
-		thHeight = '65%';
-		pMy = 'center';
-		pAt = 'center';
-		pOf = window;
-	} else {
-		targetWidth = viewportWidth * 0.3;
-		targetHeight = viewportHeight * 0.76;
-		titleFontSize = targetHeight * 0.039;
-		messagesFontSize = titleFontSize * 0.7;
-		robotFontsize = targetHeight * 0.07;
-		userIconSize = targetHeight * 0.1;
-		thHeight = '60%'; //height of thought area
-		pMy = 'left bottom';
-		pAt = 'left bottom-60';
-		pOf = '.messageButton';
-	}
-
-	//initizlize dialog widget
-	const $tMessageDialog = $('#tMessageDialog');
-	const $tCont = $('.thoughtContainer');
-	// console.log($tMessageDialog.dialog('instance'));
-	if ($tMessageDialog.dialog('instance') === undefined) {
-		// console.log('t box initialized');
-		$tMessageDialog.dialog({
-			position: {my: pMy, at: pAt, of: pOf},
-			width: targetWidth,
-			height: targetHeight,
-			resizable: true,
-			autoOpen: false,
-			show: {
-				effect: 'blind',
-				direction: 'down',
-				duration: DSdurationTime
-			},
-			hide: {
-				effect: 'blind',
-				direction: 'down',
-				duration: DSdurationTime
-			}
-		});
-		let chatUpdateTimer;
-		const updateChat = function () {
-			$.ajax({
-				type: 'GET',
-				url: 'https://t-msg-bot.space/get_msg',
-				crossDomain: true,
-				success: function (data) {
-					console.log(data);
-					if (!jQuery.isEmptyObject(data)) {
-						// console.log(Object.values(data));
-						const textMsg = Object.values(data)[0];
-						$tCont
-							.append('<p class="thought robotThought">' + textMsg + '</p>')
-							.append('<i class="userIcon"></i>');
-						$('.userIcon').fixUserIconSize();
-						$tCont.scrollToLastMsg();
-					}
-				}
-			});
-		};
-		$('.ui-dialog')
-			.on('dialogclose', function (event, ui) {
-				clearInterval(chatUpdateTimer); //stop update chat when the dialog is closed
-				console.log('clearInterval');
-			})
-			.on('dialogopen', function (event, ui) {
-				chatUpdateTimer = setInterval(function () {
-					updateChat();
-					// console.log('startInterval');
-				}, 5000);
-			})
-			.on('resize', function (e) {
-				// console.log('stop prop');
-				$('#tMessageDialog').css('width', $(this).width());
-				e.stopPropagation(); // prevents triggering to resize the entire page
-			});
-		//toggle message box view
-		$('.messageButton').click(function (event) {
-			const isOpen = $tMessageDialog.dialog('isOpen');
-			if (isOpen) {
-				$tMessageDialog.dialog('close');
-			} else {
-				$tMessageDialog.dialog('open');
-			}
-		});
-		//send message
-		let execOnce = false;
-		const rcHlC = $('#recaptchaCheck'); //recaptcha highlighter container
-		$('.sendBtn').click(function (event) {
-			const nnV = $('#nickName').val();
-			const tMV = $('#tMessageArea').val();
-			const gCR = $('#g-recaptcha-response');
-			if (nnV === null || nnV === '') {
-				console.log("Nick name can't be empty");
-			} else if (tMV === null || tMV === '') {
-				console.log("Message field can't be empty");
-			} else if (gCR.val() === null || gCR.val() === '') {
-				console.log('gCR is empty');
-				rcHlC.val('');
-			} else {
-				event.preventDefault();
-				rcHlC.val('1');
-				const formDateArr = $('form').serializeArray();
-				const formDate = JSON.stringify(formDateArr);
-				// console.log(formDate);
-				const curThoughtFontSize = $('.thought').css('font-size');
-				const curRobotFontSize = $('.fa-robot').css('font-size');
-				$tCont.append(
-					'<p class="thought userThought">' + formDateArr[1].value + '</p>'
-				);
-
-				if (!execOnce) {
-					$tCont
-						.append(
-							"<p class='thought robotThought'>I forwarded your messge. If you don't have time, just give me the contact information, master contact with you later.</p>"
-						)
-						.append('<i class="fas fa-robot"></i>');
-					execOnce = true;
-				}
-
-				$('.thought').css('font-size', curThoughtFontSize);
-				$('.fa-robot').css('font-size', curRobotFontSize);
-				// $tCont.scrollTop($('.thoughtContainer')[0].scrollHeight); //scroll to the last text msg
-				$tCont.scrollToLastMsg();
-				$.ajax({
-					type: 'POST',
-					url: 'https://t-msg-bot.space/post_msg',
-					data: formDate,
-					crossDomain: true,
-					success: function (data) {
-						console.log(data);
-						$('#tMessageArea').val('');
-					}
-				});
-			}
-		});
-		$('#tMessageArea').keypress(function (event) {
-			const key = event.keyCode;
-			if (key === 13) {
-				$('.sendBtn').click();
-			}
-		});
-	}
-
-	//update size of dialog box
-	$tMessageDialog
-		.dialog('option', 'height', targetHeight)
-		.dialog('option', 'width', targetWidth);
-	//update size thought area
-	$tCont.height(thHeight);
-	//refresh fornt sizes of dialog content
-	$('.sendBtn').css('font-size', titleFontSize);
-
-	$('.ui-dialog')
-		.css({
-			position: 'fixed',
-			'min-width': '350px'
-		})
-		.find('.ui-dialog-titlebar')
-		.css({
-			'font-size': titleFontSize,
-			'margin-top': '-20px',
-			'margin-left': '10px',
-			'margin-right': '10px'
-		});
-
-	$('.ui-dialog')
-		.find('.thought, label, input, textarea')
-		.css('font-size', messagesFontSize);
-
-	$('.fa-robot').css({
-		'font-size': robotFontsize
-	});
-
-	$('.userIcon').fixUserIconSize();
-};
 
 //handler for scroll top button
-
 const scrollTop = function () {
 	if (platformIsMobile) {
 		$('.upButton')
@@ -1282,6 +1062,9 @@ $(window).on('load', function () {
 		zoomInHeader();
 		//handler for tMessage box
 		tMessageDialogBox(viewportWidth, viewportHeight);
+		if (localStorage.getItem(LAST_SENDER_KEY) !== 'outerUser') {
+			startBlinking();
+		}
 		console.log('document loaded');
 		skillsLinksHandler();
 		hashNavigationHandler();
