@@ -270,7 +270,8 @@ const tMessageDialogBox = function (viewportWidth, viewportHeight) {
 	});
 
 	$('.ui-dialog').on('dialogclose', function (event, ui) {
-		if (localStorage.getItem(LAST_SENDER_KEY) !== 'outerUser') {
+		const localUuid = localStorage.getItem(UUID_KEY);
+		if (localUuid && localUuid !== '' && localStorage.getItem(LAST_SENDER_KEY) !== 'outerUser') {
 			startBlinking();
 		}
 		stopPolling();

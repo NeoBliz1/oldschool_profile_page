@@ -233,9 +233,6 @@ const mySkillsAnimation = function () {
 									projectDivFullSizeState = true;
 									projectDivFullSize(thisIs);
 								}
-								// if (event.currentTarget.id === 'vpb') {
-								// 	$('.hovered').trigger('mouseleave').removeClass('hovered');
-								// }
 							});
 					}
 				},
@@ -460,7 +457,7 @@ const mySkillsAnimation = function () {
 				'font-size': vpbFontSize
 			})
 			.rollInBtnAnimation();
-error
+
 		$cloneDiv.find('.project_1 > .bottomPart, #vpb').css({
 			margin: vpbMarginValue
 		});
@@ -1040,7 +1037,8 @@ $(window).on('load', function () {
 		zoomInHeader();
 		//handler for tMessage box
 		tMessageDialogBox(viewportWidth, viewportHeight);
-		if (localStorage.getItem(LAST_SENDER_KEY) !== 'outerUser') {
+		const localUuid = localStorage.getItem(UUID_KEY);
+		if (localUuid && localUuid !== '' && localStorage.getItem(LAST_SENDER_KEY) !== 'outerUser') {
 			startBlinking();
 		}
 		console.log('document loaded');
