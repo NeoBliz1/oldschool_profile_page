@@ -73,7 +73,6 @@ h2 {
 .overlayImgContainer {
 	opacity: 0.2;
 	width: 100%;
-	overflow: hidden;
 }
 .slider1 {
 	z-index: 2;
@@ -257,6 +256,19 @@ h2 {
 }
 .zoomInIconBlack {
 	color: rgb(0, 0, 0, 0.6);
+}
+.c_25_plus_5 {
+	background-image: url(../img/pojects_preview_imgs/lucid-25plus5.jpg);
+	background-repeat: no-repeat;
+	background-size: 130% 100%;
+	background-position: 50% 0;
+}
+.java_kafka_demo {
+	background-image: url(../img/pojects_preview_imgs/kafka_raft.png);
+	background-color: #000;
+	background-repeat: no-repeat;
+	background-size: 100% 90%;
+	background-position: 50% 0;
 }
 .typescript_react_FGAT {
 	background-image: url(../img/pojects_preview_imgs/neobliz1.github.io_arithmetic_first_grade_trainer_tiny.png);
