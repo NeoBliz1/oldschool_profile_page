@@ -59,7 +59,20 @@ const translations = {
     "olapJobListItem6": "Engaged in extensive bug fixing and new feature development, which included enhancing schema management, refining caching strategies, and improving MDX query processing logic.",
     "olapJobTechStack": "<b>Technology Stack:</b> Java 11, Spark 3, Hadoop, Spring Boot 3, PostgreSQL, Prometheus, Liquibase.",
     "skillsHeader": "My skills meter",
-    "projectsHeader": "Project list"
+    "projectsHeader": "Project list",
+    "tMessageDialogTitle": "Message to me",
+    "robotThought1": "Hi there, I hope you are doing well.",
+    "robotThought2": "I'm tChatBot, you can text me anything. I will resend your message to the master.<br/>It typically takes 1-2 minutes to respond.",
+    "nickNameLabel": "Enter your nickname:",
+    "nickNamePlaceholder": "nickName",
+    "messagePlaceholder": "Type there!!)",
+    "sendButton": "send",
+    "readMore": "read more",
+    "botResponse": "I forwarded your messge. If you don't have time, just give me the contact information, master contact with you later.",
+    "nickNameEmpty": "Nick name can't be empty",
+    "messageEmpty": "Message field can't be empty",
+    "captchaEmpty": "googleCaptchaResponse is empty",
+    "formError": "Error sending form payload: "
   },
   ru: {
     "mainHeader": "- Илья Гребенщиков -",
@@ -120,11 +133,27 @@ const translations = {
     "olapJobListItem6": "Активное участие в исправлении ошибок и разработке новых функций, включая улучшение управления схемами, доработку стратегий кэширования и оптимизацию логики обработки MDX-запросов.",
     "olapJobTechStack": "<b>Стек технологий:</b> Java 11, Spark 3, Hadoop, Spring Boot 3, PostgreSQL, Prometheus, Liquibase.",
     "skillsHeader": "Мои навыки",
-    "projectsHeader": "Список проектов"
+    "projectsHeader": "Список проектов",
+    "tMessageDialogTitle": "Сообщение для меня",
+    "robotThought1": "Привет, надеюсь, у вас все хорошо.",
+    "robotThought2": "Я tChatBot, вы можете написать мне что угодно. Я перешлю ваше сообщение мастеру.<br/>Обычно ответ занимает 1-2 минуты.",
+    "nickNameLabel": "Введите ваш ник:",
+    "nickNamePlaceholder": "Ваш ник",
+    "messagePlaceholder": "Пишите здесь!!)",
+    "sendButton": "отправить",
+    "readMore": "Читать далее",
+    "botResponse": "Я переслал ваше сообщение. Если у вас нет времени, просто дайте мне контактную информацию, мастер свяжется с вами позже.",
+    "nickNameEmpty": "Имя не может быть пустым",
+    "messageEmpty": "Сообщение не может быть пустым",
+    "captchaEmpty": "googleCaptchaResponse пуст",
+    "formError": "Ошибка отправки: "
   }
 };
 
-function setLanguage(lang) {
+let currentLang = 'en';
+
+const setLanguage = function (lang) {
+  currentLang = lang;
   document.querySelectorAll('[data-translate]').forEach(element => {
     const key = element.getAttribute('data-translate');
     const translation = translations[lang][key];
@@ -134,16 +163,41 @@ function setLanguage(lang) {
       console.warn(`Translation not found for key: ${key}`);
     }
   });
+
+  document.querySelectorAll('[data-translate-title]').forEach(element => {
+    const key = element.getAttribute('data-translate-title');
+    const translation = translations[lang][key];
+    if (translation !== undefined) {
+      element.setAttribute('title', translation);
+    } else {
+      console.warn(`Translation not found for key: ${key}`);
+    }
+  });
+
+  document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+    const key = element.getAttribute('data-translate-placeholder');
+    const translation = translations[lang][key];
+    if (translation !== undefined) {
+      element.setAttribute('placeholder', translation);
+    } else {
+      console.warn(`Translation not found for key: ${key}`);
+    }
+  });
+
+  renderMyRecaptcha(lang);
 }
+
+window.initRecaptcha = function() {
+  renderMyRecaptcha('en');
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   const langToggleButton = document.getElementById('lang-toggle');
-  let currentLang = 'en';
 
   langToggleButton.addEventListener('click', () => {
-    currentLang = (currentLang === 'en' ? 'ru' : 'en');
-    setLanguage(currentLang);
-    langToggleButton.textContent = currentLang === 'en' ? 'ru' : 'en';
+    const newLang = (currentLang === 'en' ? 'ru' : 'en');
+    setLanguage(newLang);
+    langToggleButton.textContent = newLang === 'en' ? 'ru' : 'en';
   });
 
   setLanguage(currentLang);

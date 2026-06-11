@@ -726,27 +726,32 @@ pre {
 	width: 100%;
 	height: auto;
 }
-.thoughtContainer {
+.thoughtContainer, .chatStream {
 	display: flex;
 	flex-flow: column nowrap;
 	margin: 0;
 	align-content: flex-start;
-	overflow-y: scroll;
+}
+.thoughtContainer {
 	padding-right: 20px;
+	overflow-y: scroll;
 }
 .thought {
-	display: flex;
-	padding: 20px;
-	border-radius: 30px;
-	min-width: 40px;
-	max-width: max-c;
-	min-height: 40px;
-	position: relative;
 	align-items: center;
+	border-radius: 30px;
+	display: flex;
+	min-width: 40px;
+	max-width: 92%;
+	overflow-wrap: break-word;
+	padding: 20px;
+	position: relative;
+	word-break: break-all;
 	justify-content: center;
 	text-align: center;
+	z-index: 1;
 }
 .robotThought {
+	align-self: self-end;
 	background-color: #fde2a4e0;
 }
 .fa-robot {
@@ -770,14 +775,14 @@ pre {
 	height: 44px;
 	top: -12px;
 	left: 28px;
-	box-shadow: -50px 30px 0 -12px #fff;
+	box-shadow: -4px 43px 0 -12px #fff;
 }
 .robotThought:before {
 	width: 44px;
 	height: 44px;
 	top: -12px;
 	left: 28px;
-	box-shadow: -50px 30px 0 -12px #fde2a4e0;
+	box-shadow: -32px -29px 0 -9px #fde2a4e0;
 }
 .robotThought:after {
 	background-color: #fde2a4e0;
@@ -793,19 +798,20 @@ pre {
 	left: -14px;
 	width: 30px;
 	height: 30px;
-	box-shadow: 40px -34px 0 0 #fff, 28px -6px 0 -2px #fff, 24px 17px 0 -6px #fff,
-		5px 25px 0 -10px #fff;
+	box-shadow: 40px -34px 0 0 #fff, 28px -6px 0 -2px #fff, 28px 17px 0 -6px #fff, 15px 25px 0 -10px #fff;
 }
 #nickName {
 	margin: 1vh 1vh 1vh 0;
 }
-.userIcon {
-	background-image: url('../img/responsive_Img/thmb_small.png');
+.user-icon {
+	background-image: url('../img/responsive_Img/tiny_ava.png');
 	border-radius: 50%;
-	background-position: 60% 0%;
+	background-position: 60% 0;
 	background-repeat: no-repeat;
 	background-size: 130%;
 	align-self: end;
+	width: 1em;
+	height: 1em;
 }
 .sendBlock {
 	display: flex;
@@ -831,6 +837,16 @@ pre {
 	color: transparent;
 	border: none;
 }
+
+.blinking {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}
 /*****************************************************/
 /*****************************************************/
 /*****************************************************/
@@ -846,7 +862,7 @@ pre {
 	}
 	.helloBlock > p {
 		text-align: justify;
-		padding-top: 0px;
+		padding-top: 0;
 		margin: 1em 0;
 		flex: 2 0;
 	}
@@ -1014,7 +1030,15 @@ pre {
 	}
 	.invertIcon {
 		grid-area: icon;
-		margin-left: 1vw;
+.messageButton.blinking {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}		margin-left: 1vw;
 	}
 	.projectDiv {
 		min-width: 320px;
@@ -1034,7 +1058,7 @@ pre {
 		top: 10px;
 	}
 	.bottomPart {
-		bottom: 0px;
+		bottom: 0;
 		left: 10px;
 	}
 }

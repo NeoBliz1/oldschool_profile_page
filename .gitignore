@@ -11,11 +11,9 @@ yarn-error.log*
 /build/
 /out/
  
- # IDE-specific files (IntelliJ IDEA)
+# IDE-specific files (IntelliJ IDEA)
 .idea
-*.iws
 *.iml
-*.ipr
  
 # OS-specific files
 .DS_Store

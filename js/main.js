@@ -11,16 +11,12 @@ jQuery.event.special.renewPage = {
 //checking browser and platform
 const platformIsMobile = (function (a) {
 	return (
-		/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
+		/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone conflict|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
 			a
-		) ||
+		) || conflict
 		/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw-(n|u)|c55\/|capi|ccwa|cdm-|cell|chtm|cldc|cmd-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc-s|devi|dica|dmob|do(c|p)o|ds(12|-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(-|_)|g1 u|g560|gene|gf-5|g-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd-(m|p|t)|hei-|hi(pt|ta)|hp( i|ip)|hs-c|ht(c(-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i-(20|go|ma)|i230|iac( |-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|-[a-w])|libw|lynx|m1-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|-([1-8]|c))|phil|pire|pl(ay|uc)|pn-2|po(ck|rt|se)|prox|psio|pt-g|qa-a|qc(07|12|21|32|60|-[2-7]|i-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h-|oo|p-)|sdk\/|se(c(-|0|1)|47|mc|nd|ri)|sgh-|shar|sie(-|m)|sk-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h-|v-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl-|tdg-|tel(i|m)|tim-|t-mo|to(pl|sh)|ts(70|m-|m3|m5)|tx-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas-|your|zeto|zte-/i.test(
 			a.substr(0, 4)
-		)
-	);
-})(navigator.userAgent || navigator.vendor || window.opera);
-let orientationIsChange = false;
-if (platformIsMobile) {
+		) conflict
 	$(window).on('orientationchange', function (event) {
 		$('.loader-gif').css('display', 'initial');
 		orientationIsChange = true;
@@ -63,7 +59,7 @@ const scrollAnimate = function (viewportHeight, refreshOffset) {
 					.offset(scrollEventOffset)
 					.duration(100)
 					.on('start', function (event) {
-						if ($this.hasClass('hidden')) {
+						if ($this.hasClass('hidden')) { conflict
 							$('#' + stickyId)
 								.removeClass('hidden fadeOutDown')
 								.addClass('fadeInUp slow');
@@ -106,8 +102,8 @@ const loaderScreen = function () {
 
 //set parallax img attributes
 const setParallaxImage = function (wSW, wDPR) {
-	let pathToParllaxImg = './img/cover_bg_3.png';
-	let pathToThmbImg = './img/ava.png';
+	let pathToParllaxImg = '../img/cover_bg_3.png';
+	let pathToThmbImg = '../img/ava.png';
 	const setImgPassway = function () {
 		$('.blizThumbnail').css('background-image', 'url(' + pathToThmbImg + ')');
 		$('.slider1, .slider2').attr('src', pathToParllaxImg);
@@ -119,6 +115,7 @@ const setParallaxImage = function (wSW, wDPR) {
 			url: cover_bgUrl,
 			type: 'HEAD',
 			error: function () {
+				pathToParllaxImg = '../img/cover_bg_3.png';
 				setImgPassway();
 				console.log('img is not available');
 			},
@@ -128,13 +125,18 @@ const setParallaxImage = function (wSW, wDPR) {
 				console.log(' img available');
 			}
 		});
+		pathToThmbImg = '../img/ava.png';
 		console.log(pathToParllaxImg);
 	} else if (wSW >= 1800 && wDPR >= 0.25 && wDPR < 3) {
+		pathToParllaxImg = '../img/cover_bg_3.png';
+		pathToThmbImg = '../img/ava.png';
 		setImgPassway();
 	} else if (wSW < 1800 && wSW >= 640 && wDPR >= 3) {
 		pathToParllaxImg = '../img/responsive_Img/cover_bg_3.png';
+		pathToThmbImg = '../img/ava.png';
 		setImgPassway();
 	} else {
+		pathToParllaxImg = '../img/cover_bg_3.png';
 		pathToThmbImg = '../img/responsive_Img/tiny_ava.png';
 		setImgPassway();
 	}
@@ -227,6 +229,9 @@ const mySkillsAnimation = function () {
 									projectDivFullSizeState = true;
 									projectDivFullSize(thisIs);
 								}
+								// if (event.currentTarget.id === 'vpb') {
+								// 	$('.hovered').trigger('mouseleave').removeClass('hovered');
+								// }
 							});
 					}
 				},
@@ -451,7 +456,7 @@ const mySkillsAnimation = function () {
 				'font-size': vpbFontSize
 			})
 			.rollInBtnAnimation();
-
+error
 		$cloneDiv.find('.project_1 > .bottomPart, #vpb').css({
 			margin: vpbMarginValue
 		});
@@ -507,6 +512,28 @@ const mySkillsAnimation = function () {
 		//set close button font-size
 		$('.closeButton').scaleCloseButton(divCurrentHeight, divCurrentWidth);
 
+		//show close button
+		// $('.closeButton')
+		// 	.removeClass('hidden')
+		// 	.hide()
+		// 	.fadeIn(DSdurationTime)
+		// 	.hover(
+		// 		function () {
+		// 			$(this)
+		// 				.find('.fa-times-circle')
+		// 				.removeClass('far')
+		// 				.addClass('fas')
+		// 				.fadeIn(DSdurationTime);
+		// 		},
+		// 		function () {
+		// 			$(this)
+		// 				.find('.fa-times-circle') conflict
+		// 				.removeClass('fas')
+		// 				.addClass('far')
+		// 				.fadeIn(DSdurationTime);
+		// 		}
+		// 	);
+
 		//overlay click handler
 		const $closeButton = $('#fullSizeSkillBoxOverlay, .closeButton');
 		$closeButton.click(function (event) {
@@ -515,7 +542,6 @@ const mySkillsAnimation = function () {
 			/* Act on the event */
 			projectDivFullSizeState = false;
 			projectDivMinimize(this, currentDivOffset);
-			$(thisIs).trigger('mouseleave');
 		});
 		//add esc key listner for close enhanced div
 		$(document).keyup(function (e) {
@@ -694,7 +720,6 @@ const resizeHandler = function () {
 		) {
 			browserInitialWidth = currBrowserWidth;
 			windowOuterHeight = currBrowserHeight;
-			$('#tMessageDialog').dialog('close'); //close current message dialog
 			projectDivSizeHandler(
 				viewportWidth,
 				viewportHeight,
@@ -703,8 +728,6 @@ const resizeHandler = function () {
 				browserInitialWidth
 			);
 			cloneDivSizeHandler(viewportHeight, viewportWidth);
-			tMessageDialogBox(viewportWidth, viewportHeight);
-			// console.log('font and divs resize is happend');
 		}
 		setParallaxImage(wSW, wDPR);
 		$('.slider1').one('load', function (event) {
@@ -717,6 +740,8 @@ const resizeHandler = function () {
 			resizeHandler();
 			// console.log('renewPage is finished');
 		});
+		$('#tMessageDialog').dialog('close');
+		console.log('font and divs resize is happend');
 	});
 };
 //this function is sensitive to resize event
@@ -946,227 +971,8 @@ const cloneDivSizeHandler = function (viewportHeight, viewportWidth) {
 		});
 	}
 };
-//handler for tMessage box
-//this function is sensitive to resize event
-const tMessageDialogBox = function (viewportWidth, viewportHeight) {
-	//dialog init variables
-	let titleFontSize,
-		messagesFontSize,
-		robotFontsize,
-		userIconSize,
-		targetWidth,
-		targetHeight,
-		thHeight;
-
-	jQuery.fn.scrollToLastMsg = function () {
-		const $this = $(this);
-		$this.scrollTop($this[0].scrollHeight);
-		return this;
-	};
-	jQuery.fn.fixUserIconSize = function () {
-		const $this = $(this);
-		$this.css({
-			width: userIconSize,
-			height: userIconSize,
-			'min-height': userIconSize
-		});
-		return this;
-	};
-	let pOf, pAt, pMy;
-	if (platformIsMobile) {
-		targetWidth = viewportWidth * 0.8;
-		targetHeight = viewportHeight * 0.7;
-		// console.log(targetWidth)
-		if (viewportWidth > viewportHeight) {
-			titleFontSize = targetHeight / 18;
-			messagesFontSize = titleFontSize / 1.5;
-			robotFontsize = targetHeight / 15;
-			userIconSize = targetHeight / 10;
-		} else {
-			titleFontSize = targetHeight / 25;
-			messagesFontSize = titleFontSize / 1.5;
-			robotFontsize = targetHeight / 20;
-			userIconSize = targetHeight / 10;
-		}
-		thHeight = '65%';
-		pMy = 'center';
-		pAt = 'center';
-		pOf = window;
-	} else {
-		targetWidth = viewportWidth * 0.3;
-		targetHeight = viewportHeight * 0.76;
-		titleFontSize = targetHeight * 0.039;
-		messagesFontSize = titleFontSize * 0.7;
-		robotFontsize = targetHeight * 0.07;
-		userIconSize = targetHeight * 0.1;
-		thHeight = '60%'; //height of thought area
-		pMy = 'left bottom';
-		pAt = 'left bottom-60';
-		pOf = '.messageButton';
-	}
-
-	//initizlize dialog widget
-	const $tMessageDialog = $('#tMessageDialog');
-	const $tCont = $('.thoughtContainer');
-	// console.log($tMessageDialog.dialog('instance'));
-	if ($tMessageDialog.dialog('instance') === undefined) {
-		// console.log('t box initialized');
-		$tMessageDialog.dialog({
-			position: {my: pMy, at: pAt, of: pOf},
-			width: targetWidth,
-			height: targetHeight,
-			resizable: true,
-			autoOpen: false,
-			show: {
-				effect: 'blind',
-				direction: 'down',
-				duration: DSdurationTime
-			},
-			hide: {
-				effect: 'blind',
-				direction: 'down',
-				duration: DSdurationTime
-			}
-		});
-		let chatUpdateTimer;
-		const updateChat = function () {
-			$.ajax({
-				type: 'GET',
-				url: 'https://t-msg-bot.space/get_msg',
-				crossDomain: true,
-				success: function (data) {
-					console.log(data);
-					if (!jQuery.isEmptyObject(data)) {
-						// console.log(Object.values(data));
-						const textMsg = Object.values(data)[0];
-						$tCont
-							.append('<p class="thought robotThought">' + textMsg + '</p>')
-							.append('<i class="userIcon"></i>');
-						$('.userIcon').fixUserIconSize();
-						$tCont.scrollToLastMsg();
-					}
-				}
-			});
-		};
-		$('.ui-dialog')
-			.on('dialogclose', function (event, ui) {
-				clearInterval(chatUpdateTimer); //stop update chat when the dialog is closed
-				console.log('clearInterval');
-			})
-			.on('dialogopen', function (event, ui) {
-				chatUpdateTimer = setInterval(function () {
-					updateChat();
-					// console.log('startInterval');
-				}, 5000);
-			})
-			.on('resize', function (e) {
-				// console.log('stop prop');
-				$('#tMessageDialog').css('width', $(this).width());
-				e.stopPropagation(); // prevents triggering to resize the entire page
-			});
-		//toggle message box view
-		$('.messageButton').click(function (event) {
-			const isOpen = $tMessageDialog.dialog('isOpen');
-			if (isOpen) {
-				$tMessageDialog.dialog('close');
-			} else {
-				$tMessageDialog.dialog('open');
-			}
-		});
-		//send message
-		let execOnce = false;
-		const rcHlC = $('#recaptchaCheck'); //recaptcha highlighter container
-		$('.sendBtn').click(function (event) {
-			const nnV = $('#nickName').val();
-			const tMV = $('#tMessageArea').val();
-			const gCR = $('#g-recaptcha-response');
-			if (nnV === null || nnV === '') {
-				console.log("Nick name can't be empty");
-			} else if (tMV === null || tMV === '') {
-				console.log("Message field can't be empty");
-			} else if (gCR.val() === null || gCR.val() === '') {
-				console.log('gCR is empty');
-				rcHlC.val('');
-			} else {
-				event.preventDefault();
-				rcHlC.val('1');
-				const formDateArr = $('form').serializeArray();
-				const formDate = JSON.stringify(formDateArr);
-				// console.log(formDate);
-				const curThoughtFontSize = $('.thought').css('font-size');
-				const curRobotFontSize = $('.fa-robot').css('font-size');
-				$tCont.append(
-					'<p class="thought userThought">' + formDateArr[1].value + '</p>'
-				);
-
-				if (!execOnce) {
-					$tCont
-						.append(
-							"<p class='thought robotThought'>I forwarded your messge. If you don't have time, just give me the contact information, master contact with you later.</p>"
-						)
-						.append('<i class="fas fa-robot"></i>');
-					execOnce = true;
-				}
-
-				$('.thought').css('font-size', curThoughtFontSize);
-				$('.fa-robot').css('font-size', curRobotFontSize);
-				// $tCont.scrollTop($('.thoughtContainer')[0].scrollHeight); //scroll to the last text msg
-				$tCont.scrollToLastMsg();
-				$.ajax({
-					type: 'POST',
-					url: 'https://t-msg-bot.space/post_msg',
-					data: formDate,
-					crossDomain: true,
-					success: function (data) {
-						console.log(data);
-						$('#tMessageArea').val('');
-					}
-				});
-			}
-		});
-		$('#tMessageArea').keypress(function (event) {
-			const key = event.keyCode;
-			if (key === 13) {
-				$('.sendBtn').click();
-			}
-		});
-	}
-
-	//update size of dialog box
-	$tMessageDialog
-		.dialog('option', 'height', targetHeight)
-		.dialog('option', 'width', targetWidth);
-	//update size thought area
-	$tCont.height(thHeight);
-	//refresh fornt sizes of dialog content
-	$('.sendBtn').css('font-size', titleFontSize);
-
-	$('.ui-dialog')
-		.css({
-			position: 'fixed',
-			'min-width': '350px'
-		})
-		.find('.ui-dialog-titlebar')
-		.css({
-			'font-size': titleFontSize,
-			'margin-top': '-20px',
-			'margin-left': '10px',
-			'margin-right': '10px'
-		});
-
-	$('.ui-dialog')
-		.find('.thought, label, input, textarea')
-		.css('font-size', messagesFontSize);
-
-	$('.fa-robot').css({
-		'font-size': robotFontsize
-	});
-
-	$('.userIcon').fixUserIconSize();
-};
 
 //handler for scroll top button
-
 const scrollTop = function () {
 	if (platformIsMobile) {
 		$('.upButton')
@@ -1252,6 +1058,9 @@ $(window).on('load', function () {
 		zoomInHeader();
 		//handler for tMessage box
 		tMessageDialogBox(viewportWidth, viewportHeight);
+		if (localStorage.getItem(LAST_SENDER_KEY) !== 'outerUser') {
+			startBlinking();
+		}
 		console.log('document loaded');
 		skillsLinksHandler();
 		hashNavigationHandler();

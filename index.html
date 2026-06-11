@@ -39,24 +39,26 @@
   </button>
 
   <!-- message dialog -->
-  <div id="tMessageDialog" title="Message to me">
+  <div id="tMessageDialog" title="Message to me" data-translate-title="tMessageDialogTitle">
     <div class="thoughtContainer">
-      <p class="thought robotThought">Hi there, I hope you are doing well.</p>
+      <p class="thought robotThought" data-translate="robotThought1">Hi there, I hope you are doing well.</p>
       <i class="fas fa-robot"></i>
-      <p class="thought robotThought">
+      <p class="thought robotThought" data-translate="robotThought2">
         I'm tChatBot, you can text me anything. I will resend your message to
         the master.<br/>
         It typically takes 1-2 minutes to respond.
       </p>
       <i class="fas fa-robot"></i>
+      <div class="chatStream"></div>
     </div>
     <form action="">
-      <label for="nickName">Enter your nickname:</label>
+      <label for="nickName" data-translate="nickNameLabel">Enter your nickname:</label>
       <input
           id="nickName"
           minlength="1"
           name="nickName"
           placeholder="nickName"
+          data-translate-placeholder="nickNamePlaceholder"
           required
           tabindex="2"
           type="text"
@@ -67,17 +69,19 @@
           minlength="1"
           name="tMessageArea"
           placeholder="Type there!!)"
+          data-translate-placeholder="messagePlaceholder"
           required
           rows="2"
           spellcheck="true"
           tabindex="3"
       ></textarea>
       <div class="sendBlock">
-        <button class="sendBtn" tabindex="5">send</button>
+        <button class="sendBtn" tabindex="5" data-translate="sendButton">send</button>
         <div class="g-recaptcha-container">
           <div
               class="g-recaptcha"
-              data-sitekey="6LfhIFAaAAAAADP9r_20uuqTdqvKQUH4hsWzTLGT"
+              data-sitekey="6Lc83gotAAAAAFtrV49_fGgIXORq9viNgws9o5FY"
+              data-action="TEXT_MSG"
               data-tabindex="4"
           ></div>
           <input
@@ -85,11 +89,12 @@
               minlength="1"
               required
               tabindex="-1"
-              type="text"
+              type="submit"
+              value="Submit"
           />
         </div>
-
-        <input autofocus="true" type="hidden"/>
+        <div id="recaptcha-error-message" style="color: red; display: none;" data-translate="recaptchaErrorMessage">Please complete the reCAPTCHA</div>
+        <input autofocus="autofocus" type="hidden"/>
       </div>
     </form>
   </div>
@@ -1046,12 +1051,13 @@
 <!-- img parallax -->
 <script src="js/modules/simpleParallax.js" type="text/javascript"></script>
 <!-- google recaptcha2 -->
-<script async defer src="js/modules/recaptcha_api.js"></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?onload=initRecaptcha&render=explicit" async defer></script>
 <!-- my module function -->
 <script src="js/serviceJs/modules.js" type="text/javascript"></script>
 <!-- Main -->
 <script src="js/main.js" type="text/javascript"></script>
 <script src="js/translate.js" type="text/javascript"></script>
+<script src="js/chatUtils.js" type="text/javascript"></script>
 <script src="js/themes.js" type="text/javascript"></script>
 </body>
 </html>
