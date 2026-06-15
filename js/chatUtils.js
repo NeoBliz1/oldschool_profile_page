@@ -89,7 +89,6 @@ const checkAndApplyUserSessionLock = function () {
 		const parsedExpiry = parseInt(expiryTime, 10);
 
 		if (Date.now() < parsedExpiry) {
-			// console.log("Active session found for: " + savedName + ". Expires: " + new Date(parsedExpiry).toLocaleString());
 			$nameInput.val(savedName).prop('disabled', true);
 			return true;
 		} else {
@@ -296,6 +295,24 @@ const tMessageDialogBox = function (viewportWidth, viewportHeight) {
 		event.preventDefault();
 		const nnV = $('#nickName').val();
 		const tMV = $('#tMessageArea').val();
+
+		const nickNameInput = $('#nickName')[0];
+		if (!nnV) {
+			nickNameInput.setCustomValidity("Please enter a nickname.");
+			nickNameInput.reportValidity();
+			return;
+		} else {
+			nickNameInput.setCustomValidity("");
+		}
+
+		const messageAreaInput = $('#tMessageArea')[0];
+		if (!tMV) {
+			messageAreaInput.setCustomValidity("Please enter a message.");
+			messageAreaInput.reportValidity();
+			return;
+		} else {
+			messageAreaInput.setCustomValidity("");
+		}
 
 		let googleCaptchaValue = '';
 		const localUuid = localStorage.getItem(UUID_KEY);
