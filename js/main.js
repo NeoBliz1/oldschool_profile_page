@@ -24,6 +24,7 @@ if (platformIsMobile) {
 	$(window).on('orientationchange', function (event) {
 		$('.loader-gif').css('display', 'initial');
 		orientationIsChange = true;
+		window.location.reload();
 		// console.log(orientationIsChange);
 	});
 }
@@ -686,6 +687,7 @@ const resizeHandler = function () {
 			bHratio = 1;
 		} else {
 			bHratio = windowOuterHeight / currBrowserHeight;
+			window.location.reload();
 		}
 		// console.log('viewportHeight' + viewportHeight);
 		// console.log('windowOuterHeight'+windowOuterHeight, 'currBrowserHeight'+currBrowserHeight);
@@ -719,7 +721,6 @@ const resizeHandler = function () {
 			resizeHandler();
 			// console.log('renewPage is finished');
 		});
-		$('#tMessageDialog').dialog('close');
 		console.log('font and divs resize is happend');
 	});
 };
