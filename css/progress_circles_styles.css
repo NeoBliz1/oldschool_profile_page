@@ -77,17 +77,15 @@
 .ico-typeScript {
 	background-image: url(../img/skills_icons/typescript.svg);
 }
-.ico-webpack {
-	background-image: url(../img/skills_icons/webpack.svg);
-}
 .ico-java {
 	background-image: url(../img/skills_icons/java.svg);
-	height: 250px;
-	width: 250px;
-	background-position: 30% 11%;
+    background-size: 100% 100%;
 }
 .ico-c {
-	background-image: url(../img/skills_icons/c_icon.webp);
+	background-image: url(../img/skills_icons/c_icon.svg);
+}
+.ico-go {
+	background-image: url(../img/skills_icons/go_icon.svg);
 }
 .progressbar {
 	position: relative;
@@ -141,9 +139,6 @@
 .shadow-bootstrap {
 	filter: drop-shadow(0 0 5px #6126ad);
 }
-.shadow-webpack {
-	filter: drop-shadow(0 0 5px #6db4f3);
-}
 .shadow-java {
 	filter: drop-shadow(0 5px 5px #ff0000);
 }
@@ -176,9 +171,6 @@
 }
 .circle-bootstrap {
 	animation: anim_circle-bootstrap 1s ease-in-out forwards;
-}
-.circle-webpack {
-	animation: anim_circle-webpack 1s ease-in-out forwards;
 }
 .progressbar__text {
 	position: absolute;
@@ -238,11 +230,6 @@
 	@keyframes anim_circle-ts {
 		to {
 			stroke-dashoffset: 360;
-		}
-	}
-	@keyframes anim_circle-webpack {
-		to {
-			stroke-dashoffset: 375;
 		}
 	}
 
@@ -324,11 +311,6 @@
 	@keyframes anim_circle-ts {
 		to {
 			stroke-dashoffset: 320;
-		}
-	}
-	@keyframes anim_circle-webpack {
-		to {
-			stroke-dashoffset: 355;
 		}
 	}
 
@@ -420,11 +402,6 @@
 			stroke-dashoffset: 260;
 		}
 	}
-	@keyframes anim_circle-webpack {
-		to {
-			stroke-dashoffset: 310;
-		}
-	}
 
 	.container__progressbars {
 		justify-content: space-around;
@@ -507,11 +484,6 @@
 	@keyframes anim_circle-ts {
 		to {
 			stroke-dashoffset: 260;
-		}
-	}
-	@keyframes anim_circle-webpack {
-		to {
-			stroke-dashoffset: 275;
 		}
 	}
 
