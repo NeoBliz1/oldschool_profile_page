@@ -257,6 +257,12 @@ h2 {
 .zoomInIconBlack {
 	color: rgb(0, 0, 0, 0.6);
 }
+.profile_chat_app {
+	background-image: url(../img/pojects_preview_imgs/futuristic_portfolio_website_chat_interface_sci--0.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: 50% 0;
+}
 .c_25_plus_5 {
 	background-image: url(../img/pojects_preview_imgs/lucid-25plus5.jpg);
 	background-repeat: no-repeat;
@@ -654,8 +660,6 @@ pre {
 	text-decoration: none;
 	text-align: center;
 	text-shadow: 0px 2px 0px #ffee66;
-	width: 30px;
-	height: 30px;
 }
 
 #lang-toggle,
