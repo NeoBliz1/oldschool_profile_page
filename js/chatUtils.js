@@ -58,6 +58,10 @@ const stopBlinking = function () {
 	document.title = originalTitle;
 };
 
+const validateInput = function(text) {
+    const pattern = /^[a-zA-Z0-9а-яА-ЯёЁ!?*()_., -]*$/;
+    return pattern.test(text);
+};
 
 // Global control utilities
 const stopPolling = function () {
@@ -297,21 +301,33 @@ const tMessageDialogBox = function (viewportWidth, viewportHeight) {
 		const tMV = $('#tMessageArea').val();
 
 		const nickNameInput = $('#nickName')[0];
+		const validationErrMsg = translations[currentLang].validationErrMsg;
+		const nickNameValidationErr = translations[currentLang].nickNameValidationErr;
+		const msgBodyValidationErr = translations[currentLang].msgBodyValidationErr;
+
 		if (!nnV) {
-			nickNameInput.setCustomValidity("Please enter a nickname.");
+			nickNameInput.setCustomValidity(nickNameValidationErr);
+			nickNameInput.reportValidity();
+			return;
+		} else if (!validateInput(nnV)) {
+			nickNameInput.setCustomValidity(validationErrMsg);
 			nickNameInput.reportValidity();
 			return;
 		} else {
-			nickNameInput.setCustomValidity("");
+			nickNameInput.setCustomValidity('');
 		}
 
 		const messageAreaInput = $('#tMessageArea')[0];
 		if (!tMV) {
-			messageAreaInput.setCustomValidity("Please enter a message.");
+			messageAreaInput.setCustomValidity(msgBodyValidationErr);
+			messageAreaInput.reportValidity();
+			return;
+		} else if (!validateInput(tMV)) {
+			messageAreaInput.setCustomValidity(validationErrMsg);
 			messageAreaInput.reportValidity();
 			return;
 		} else {
-			messageAreaInput.setCustomValidity("");
+			messageAreaInput.setCustomValidity('');
 		}
 
 		let googleCaptchaValue = '';
@@ -403,6 +419,13 @@ const tMessageDialogBox = function (viewportWidth, viewportHeight) {
 }
 
 // Input event mutation hooks
+$('#nickName, #tMessageArea').on('input', function() {
+    const inputElement = $(this)[0];
+    if (validateInput($(this).val())) {
+        inputElement.setCustomValidity("");
+    }
+});
+
 $('#nickName').on('change blur', function () {
 	const enteredName = $(this).val();
 	if (enteredName && !$(this).prop('disabled')) {
