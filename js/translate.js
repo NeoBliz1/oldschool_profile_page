@@ -72,7 +72,10 @@ const translations = {
     "nickNameEmpty": "Nick name can't be empty",
     "messageEmpty": "Message field can't be empty",
     "captchaEmpty": "googleCaptchaResponse is empty",
-    "formError": "Error sending form payload: "
+    "formError": "Error sending form payload: ",
+    "validationErrMsg": "Invalid characters. Allowed: English/Russian letters, numbers, and !?*()_., -",
+    "nickNameValidationErr": "Please enter a nickname.",
+    "msgBodyValidationErr": "Please enter a message."
   },
   ru: {
     "mainHeader": "- Илья Гребенщиков -",
@@ -146,7 +149,10 @@ const translations = {
     "nickNameEmpty": "Имя не может быть пустым",
     "messageEmpty": "Сообщение не может быть пустым",
     "captchaEmpty": "googleCaptchaResponse пуст",
-    "formError": "Ошибка отправки: "
+    "formError": "Ошибка отправки: ",
+    "validationErrMsg": "Недопустимые символы. Разрешены: английские/русские буквы, цифры и !?*()_., -",
+    "nickNameValidationErr": "Пожалуйста, введите псевдоним.",
+    "msgBodyValidationErr": "Пожалуйста, введите сообщение."
   }
 };
 
